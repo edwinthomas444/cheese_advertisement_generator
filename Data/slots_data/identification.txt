@@ -1,0 +1,13 @@
+NameOfCheese (str): Name of the Cheese
+QualityOfRind (str): Adjective that describes the Rind in the cheese description
+AnimalSource (str):  Animal's name from which the cheese is sourced.
+MainIngredient (str): Main Ingredient used in Manufacturing the Cheese other than the milk mentioned in the description.
+MainIngredientWeight (int): Weight of the MainIngredient excluding the unit, used in manufacturing the Cheese other than the milk, which is mentioned in the description.
+NameOfCheesery (str): Name of the Establishment in which the cheese is made or the Manufacturer's name. 
+NamesOfFacilities (List(str)): A list of the names of the Manufacturers of the Cheese. 
+ManufacturePlace (str): Name of the place in or near which the cheese is made.
+ManufacturedSinceDate (str): Date from which the cheese is being manufactured.
+CheeseOriginatedDate (str): Era or Date from which cheese making originated by the first cheese creators based on historical references.
+CheeseCreatorMovedFromPlace (str): Place from which creators of the cheese came from based on historical references.
+CheeseCreatorMovedToPlace (str): Place to which the creators of the cheese moved to make the cheese based on historical references.
+CheeseNameFromObject (str): Name of the object from which the cheese got its name based on historical references.

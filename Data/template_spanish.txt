@@ -1,0 +1,264 @@
+1.1
+(NOMBRE DEL QUESO)
+(NOMBRE DEL QUESO) Cheese
+(NOMBRE DEL QUESO) Cheese PDO (CUALIDAD) Rind (NÚMERO) Kg
+(NOMBRE DEL QUESO) Cheese PDO waxed (NÚMERO) g
+(NOMBRE DEL QUESO) (ANIMAL) Cheese
+(NOMBRE DEL QUESO) with (INGREDIENTE) (PESO)
+
+1.2
+A
+Cheesemaker: (NOMBRE DE LA QUESERÍA)
+Main makers are (NOMBRES DE LAS QUESERÍAS)
+B
+Made by (NOMBRE DE LA QUESERÍA) in (LUGAR).
+Made in (LUGAR) since (AÑO) by (NOMBRE DE LA QUESERÍA).
+Made by (NOMBRE DE LA QUESERÍA) who have been making (NOMBRE DEL QUESO) for over (NÚMERO) years.
+Produced by (NOMBRE DE LA QUESERÍA) near (LUGAR).
+C
+It is made at (NOMBRE DE LA QUESERÍA) in (LUGAR).
+(NOMBRE DEL QUESO) is hand-made by (NOMBRE DEL QUESERO) at (NOMBRE DE LA QUESERÍA) near (LUGAR) in (REGIÓN).
+(NOMBRE DEL QUESO) is locally produced at (NOMBRE DE LA QUESERÍA) in (LUGAR).
+The major makers in (PAÍS) are (NOMBRES DE LAS QUESERÍAS).
+
+1.3
+A
+{Country of origin: (PAÍS)
+Region: (REGIÓN)}
+Based on a (SIGLO) century recipe.
+B
+(NOMBRE DEL QUESO) is made in (LUGAR)
+(NOMBRE DEL QUESERO) originally created (NOMBRE DEL QUESO) when he was farming ON (LUGAR) in (AÑO).	
+(NOMBRE DEL QUESO) has been made in (LUGAR) for over (NÚMERO) years to a traditional recipe.
+Dating back to (PERÍODO DE TIEMPO), this cheese was brought to (LUGAR) by (PERSONAS) from (LUGAR). 
+(NOMBRE DEL QUESO) originated from (LUGAR) around (SIGLO) century and took its name from (OBJETO QUE DIO NOMBRE AL QUESO).
+It is thought that cheese making was first brought to (LUGAR) in (SIGLO) century by (PERSONAS) who arrived from (LUGAR) and settled in (LUGAR). They in turn passed on the cheese making techniques to the local farmers of (LUGAR) and thus, (NOMBRE DEL QUESO) was born. (NOMBRE DE LA QUESERÍA) has been making (NOMBRE DEL QUESO) in (LUGAR) since (AÑO).
+
+2
+Image
+
+
+3.1
+A
+{Fat content: (NÚMERO) %
+Texture: (CUALIDAD)
+Rind: (CUALIDAD)
+Colour: (COLOR)}
+{Style of Cheese: (TIPO DE QUESO)
+Vegetarian? (SI/NO)
+Organic? (SI/NO)
+Unpasteurised? (SI/NO)
+For Pregnant Women? (SI/NO)}
+
+B
+A (CUALIDAD) cheese. 
+(CUALIDAD) in appearance.
+(CUALIDAD) in taste.
+(CUALIDAD) in texture.
+Shaped in (FORMA) and coated with a (COLOR) rind.
+Available as a (NÚMERO) g (FORMA) coated in (COLOR) wax.
+(CUALIDAD) (TIPO DE QUESO) with a (CUALIDAD) flavour.
+(CUALIDAD) with a slight tang which is (COLOR) in colour with a (CUALIDAD) texture.
+Generally in (FORMA) form but sometimes in (FORMA) for supermarket pre-packs.
+
+C
+(NOMBRE DEL QUESO) is a (CUALIDAD) cheese.
+It has a (CUALIDAD) texture.
+It has (COLOR) veins running through its body and a wonderful deep (COLOR) colour that marks its appeal. The interior is (COLOR).
+It is suitable for vegeterians.
+(NOMBRE DEL QUESO) is made to an original recipe that makes a unique (CUALIDAD) cheese that has a genuine (CUALIDAD) in texture and taste.
+It is also available prepacked in (FORMA), ready grated (in (NÚMERO) g packs), ready sliced ((NÚMERO) slices per pack) and from the service counter.
+
+3.2
+A
+(CUALIDAD) (ANIMAL) milk cheese
+from (CUALIDAD) (ANIMAL) milk cheese
+made from (ANIMAL) milk
+made using (CUALIDAD) milk and (ORIGEN) rennet
+(CUALIDAD) (TIPO DE QUESO) flavoured with (INGREDIENTES)
+(CUALIDAD) (TIPO DE QUESO) carefully combined with (CUALIDAD) (INGREDIENTES)
+B
+It uses (CUALIDAD) milk.
+(NOMBRE DEL QUESO) is made from (CUALIDAD) milk
+The cheese contains a minimum of (NÚMERO) % milk fat and a maximum of (NÚMERO) % water.
+Several versions of (NOMBRE DEL QUESO) are produced - one made from (CUALIDAD) milk and one from (CUALIDAD) milk.
+Other varieties with added flavours such as (INGREDIENTES) are available.
+This is made from (CUALIDAD) milk from the morning milking, and (CUALIDAD) milk from the evening milking. All the milk is (CUALIDAD), and (ORIGEN) rennet is used.
+(INGREDIENTE) is sometimes added to the milk to produce (TIPO DE QUESO). 
+It has a characteristic (COLOR) hue given by the addition of (INGREDIENTE) to the milk.
+(NOMBRE DEL QUESO) is blended with (INGREDIENTES).
+
+
+4.1
+A
+Handmade using a unique recipe developed over many years along with carefully selected starter cultures.
+It is based on an old fashioned traditional (NOMBRE DEL QUESO) recipe with a modern twist.
+(NOMBRE DEL QUESO) is traditionally hand-made.
+The cheese is still made in the traditional shape using the traditional method and skills. After the addition of starter culture and rennet to the milk, the curds are cut and scalded at a temperature of (NÚMERO) °C with the whey for (NÚMERO) minutes. The whey is then drained away leaving the curd which is milled and salted. The cheese is then moulded and mechanically pressed for up to (NÚMERO) days and is ready for consumption at around (NÚMERO) months.
+(NOMBRE DEL QUESO) is brine dipped.
+(NOMBRE DEL QUESO) takes (NÚMERO) hours to make.
+The cheese is then shaped into (FORMA) and pressed.
+(NOMBRE DEL QUESO) is naturally smoked, using (TIPO DE MADERA).
+It is gently smoked, over (TIPO DE MADERA) for (NÚMERO) days.
+(NOMBRE DEL QUESO) is left open to the air to mature which results in a (CUALIDAD) rind with a (COLOR) mould.
+It can only be produced in a (FORMA) shape and is never pressed.
+Some is made in traditional (FORMA), but the bulk is made in (FORMA), which then makes the cheese easier to pre-pack.
+It is made to a traditional recipe with (ORIGEN) rennet and is crucially hand-ladled. 
+Produced via (PROCESO) of the milk rather than by (PROCESO). 
+After the curds are formed they are scalded, which means that the cheese will not melt when heated.
+Once the curds are produced, the whey is drained off.
+The soft curds from their (ANIMAL) milk are ladled by hand into individual moulds and gently drained. 
+Curds are formed and left to drain overnight. The whey is removed and the curd cut into (FORMA) and stacked and turned every (NÚMERO) minutes. The curd is milled and salted, put into (FORMA) moulds and lightly pressed. After (NÚMERO) days the mould is removed and the surfaces rubbed to form the crust and at (NÚMERO) weeks skewered to allow air to enter the body of the cheese and so form the blue veins.
+The cheese is then sealed with cloth or other wrapping material and at about (NÚMERO) weeks of age the cheese is pierced with stainless steel needles to allow air to enter the body of the cheeses. This activates the blue mould which then proceeds to break down the protein in the cheese and create the blue veins.
+It has (PLANTA) leaves wrapped around it after it has come out of the cheese press, and finally it is given a light spraying of penicillium candidum white mould to help give the cheese its unique appearance and flavour.
+This traditional method is unique to (NOMBRE DEL QUESO) and is still adhered to by (NOMBRE DE LA QUESERÍA) today.
+
+4.2
+A
+The cheese is aged for at least (NÚMERO) weeks.
+It is aged for a minimum of (NÚMERO) months.
+This cheese is matured for up to (NÚMERO) years.
+It is allowed to mature for up to (NÚMERO) months.
+The cheese ripens in (NÚMERO) months.
+Ageing process of the cheese ranges from (NÚMERO) to (NÚMERO) months.
+We mature it for about (NÚMERO) months.
+The cheese is left to mature for (NÚMERO) months.
+Once made, the cheese is matured in carefully controlled conditions, and turned daily for up to (NÚMERO) months, until each batch is graded, ready for sale, by the cheese maker.
+Mild (NOMBRE DEL QUESO) is typically sold at about (NÚMERO) months of age; medium matured (NOMBRE DEL QUESO) at (NÚMERO) to (NÚMERO) months; mature (NOMBRE DEL QUESO) at around (NÚMERO) months, Extra Mature at around (NÚMERO) months and Vintage at (NÚMERO) months or more.
+As (NOMBRE DEL QUESO) matures, so it becomes firmer in texture and slightly darker in colour.
+
+
+
+5.1
+A
+(NOMBRE DEL QUESO) is (CUALIDAD) in flavour.
+It has a (CUALIDAD) taste.
+It has a (CUALIDAD) flavour.
+(NOMBRE DEL QUESO) has a subtle (CUALIDAD) flavour and a hint of (CUALIDAD).
+An outstanding (ANIMAL) cheese with a delicate yet distinctive (CUALIDAD) flavour.
+A wonderfully (CUALIDAD) texture with a clean (CUALIDAD) that wakens up your taste buds and builds to a crescendo of full (NOMBRE DEL QUESO) flavour.
+This cheese balances the two flavours of (INGREDIENTES) to create an equal partnership.
+The gentle nature of this particular smoking technique creates a mild (CUALIDAD) smoked flavour.
+It is complimented by a smooth (CUALIDAD) flavour with a slight tang.
+It has a (CUALIDAD) background flavor.
+It has a delicious (CUALIDAD) bite on the finish.
+The flavor has a hint of (ALIMENTO) on the finish.
+It has a (CUALIDAD) flavour with a nice touch of (ALIMENTO) and a lingering finish.
+It has (CUALIDAD) flavours and a (CUALIDAD) bite at the end.
+It has a slightly (CUALIDAD) aftertaste.
+This cheese tends to be (CUALIDAD) tasting with a pleasant tang.
+As (NOMBRE DEL QUESO) matures so its taste develops from the young creamy taste of mild (NOMBRE DEL QUESO) to complex, lasting, (CUALIDAD) flavours of mature (NOMBRE DEL QUESO) and beyond.
+(NOMBRE DEL QUESO) is characterised by a (CUALIDAD) flavor.
+It has a (CUALIDAD) taste and aroma and is clean on the palate with a very slightly tangy finish.
+It has a (CUALIDAD) flavour which will vary with age.
+It is a (CUALIDAD) cheese, with a (CUALIDAD) taste incorporating (ORIGEN) milk character, (CUALIDAD) notes.
+It has a (CUALIDAD) centre and a taste similar to that of (ALIMENTO).
+The cheese has an (CUALIDAD) blend of sweet and savoury flavours.
+The taste resembles (ALIMENTO) and there is a distinctive (ALIMENTO) aroma.
+
+
+
+6.1
+A
+Best enjoyed at room temperature.
+It is best served at room temperature.
+If serving on a cheeseboard remove the cheese from the fridge (PERÍODO DE TIEMPO) before serving, to allow it to come to room temperature and to develop its full texture and flavour.
+6.2
+A
+A great addition to any cheeseboard.
+Perfect for (PLATO).
+Ideal as a starter (served warm, with a (ALIMENTO)), in salads or simply as part of a cheeseboard.
+Perfectly smooth, creamy and full flavoured when added to a (PLATO).
+Cubed on (PLATO) with a (ALIMENTO).
+Scattered over a (PLATO).
+Can be served in (FORMA).
+B
+(NOMBRE DEL QUESO) is suitable for use on a cheeseboard or in cooking.
+It makes an excellent dessert cheese.
+It is ideal for serving as part of a cheeseboard.
+Serve with a selection of (TIPOS DE QUESO) on a cheeseboard.
+It makes a welcome addition to any cheeseboard.
+It is also at home on any cheeseboard where its (CUALIDAD) contrasts with the more (CUALIDAD) flavours of (CUALIDAD) cheeses.
+It is suitable for (USO) and (USO).
+The cheese is also a fantastic cooking cheese and makes an indulgent (PLATO).
+It melts beautifully, adds colour to a cheeseboard and to (PLATO) and makes a nice flavoursome addition to (PLATO) either grated or cubed.
+It is also very versatile and can be used in hot or cold recipes.
+It is superb for crumbling into (PLATOS). It also works well with (PLATOS) with a (ALIMENTO) base.
+This cheese is used as an ingredient in (PLATOS).
+Use grated in a huge variety of recipes.
+Serve on a cheeseboard or use in (PLATOS).
+(NOMBRE DEL QUESO) is an excellent melting cheese and can be incorporated into cooked dishes or sprinkled over the top. 
+(NOMBRE DEL QUESO) can be served on a cheeseboard or grated and added to (PLATOS).
+Use in cooking, in sandwiches, on a cheeseboard or simply cut into cubes and serve as a quick snack.
+Grate and mix with (ALIMENTO) to make cheese on toast or use to make (PLATO).
+(NOMBRE DEL QUESO) can be served on a cheeseboard or grated and included in (PLATOS) or sprinkled over (PLATOS) and grilled.
+(NOMBRE DEL QUESO) is one of the classic cheeses to include on a cheeseboard. Use it in cooking - try it in (PLATO), on toast or sprinkled over (PLATOS).
+
+6.3
+A
+A beautiful complement to (ALIMENTO).
+A lovely accompaniment to (ALIMENTOS).
+Sliced on a (ALIMENTOS).
+In salad dressings, in cooking or simply served with (ALIMENTOS).
+{Best enjoyed:
+Accompanying (ALIMENTO)
+With a (ALIMENTO).}
+
+B
+Serve simply with (ALIMENTO).
+(NOMBRE DEL QUESO) is traditionally served with a slice of (ALIMENTO).
+Our suggestion for this one is on top of a slab of (ALIMENTO).
+Serve sliced in crusty rolls with a (ALIMENTO).
+Grill on (ALIMENTO) with (ALIMENTO) and (ALIMENTO). 
+(NOMBRE DEL QUESO) is delicious with (ALIMENTOS).
+Traditional uses of (NOMBRE DEL QUESO) include serving with (ALIMENTOS) for a perfect lunchtime or tea time snack; with (ALIMENTO) or with (ALIMENTO).
+The cheese is a spreading cheese well partnered by (ALIMENTOS) or stirred into (PLATO).
+Serve on its own or use in cooking to make (PLATOS) to serve with (ALIMENTOS).
+
+6.4
+A
+Cheese and wine are a match made in heaven and which wine you enjoy with which cheese relies a lot on personal preference.
+On its own it goes very well with either a glass of beer or red wine.
+(NOMBRE DE LA BEBIDA) is the perfect partner.
+Our suggestion for this one is a (NOMBRE DE LA BEBIDA).
+It goes splendidly with a (NOMBRE DE LA BEBIDA).
+It is traditionally served with (NOMBRE DE LA BEBIDA).
+It is worth trying with a (NOMBRE DE BEBIDA) or a (NOMBRE DE BEBIDA).
+This cheese is perfect with a chilled glass of (NOMBRE DE LA BEBIDA).
+As an accompaniment try a good (NOMBRE DE LA BEBIDA) or (NOMBRE DE LA BEBIDA).
+Enjoy with a traditional (NOMBRE DE LA BEBIDA) or a full bodied glass of (NOMBRE DE LA BEBIDA).
+A wonderful companion to (NOMBRE DE LA BEBIDA) or (NOMBRE DE LA BEBIDA).
+It is also delicious served after dinner with a glass of (NOMBRE DE LA BEBIDA) or (NOMBRE DE LA BEBIDA).
+
+7.1
+A
+(NOMBRE DEL QUESO) is a Protected Designation of Origin.
+(NOMBRE DEL QUESO) is a cheese awarded with a Protected Designation of Origin (PDO).
+(NOMBRE DEL QUESO) is a Protected Designation of Origin (PDO) cheese which guarantees it has been made on the farm by hand, using authenticated methods.
+A very special Award Winning (TIPO DE QUESO) cheese awarded a PDO for its authentic taste.
+It has a Protected Designation of Origin (PDO) which requires that only the milk produced in (LUGAR) be used to make the cheese.
+The (TIPO DE QUESO) recipe and methods are protected and accredited with Protected Designation of Origin (PDO) status. This is recognised worldwide and safeguards the future production and quality of one of the (LUGAR) most cherished treasures.
+(NOMBRE DEL QUESO) has a Protected Designation of Origin (PDO) and can only be made in the environs of (LUGAR) from milk produced in (LUGAR). 
+It is made on farms in (LUGAR) and (NÚMERO) makers are licensed to use the EU Protected Designation of Origin (TIPO DE QUESO).
+(NOMBRE DEL QUESO) is honoured with a certification trademark and Protected Designation of Origin status, meaning it can only be made in (LUGAR) to a specified recipe. 
+Producers of the cheese must have a registered herd of (RAZA) (ANIMAL), the milk from which is used to make the cheese.
+A (METAL) medal winner at the (CERTAMEN).
+(NOMBRE DEL QUESO) won a (METAL) medal at the (AÑO) (CERTAMEN).
+This cheese won the coveted (CATEGORÍA) (AÑO).
+It won a (METAL) medal at the (AÑO) (CERTAMEN) for the (CATEGORÍA).
+(NOMBRE DEL QUESO) became (PREMIO) at the (CERTAMEN) in (AÑO).
+Winner of the prestigious (PREMIO) for (CATEGORÍA) at the (CERTAMEN).
+All the cheese produced at (NOMBRE DE LA QUESERÍA) is made using only locally sourced milk from farms no more than (NÚMERO) km away. Every cheese is hand crafted to the highest quality standards using time honoured traditional methods.
+(NOMBRE DEL QUESO) is a past (METAL) medal winner at the (CERTAMEN) and was (PREMIO) at the (CERTAMEN).
+Made by local award winning company (NOMBRE DE LA QUESERÍA).
+This cheese came (ORDINAL) in the (CERTAMEN) (AÑO).
+It has become increasingly popular helped by numerous cheese show victories, including a victory in the (AÑO) (CERTAMEN) which gave the cheese its first supermarket listing.
+(NOMBRE DEL QUESO) was crowned (PREMIO) at the (CERTAMEN) held in (CIUDAD) in (AÑO) and was runner up in (AÑO).
+
+
+
+
+
+
+
+

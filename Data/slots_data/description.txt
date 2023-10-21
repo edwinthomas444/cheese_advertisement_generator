@@ -1,0 +1,26 @@
+CheeseProductFatContent (int): Fat Content percentage excluding the percentage symbol present within the cheese.
+CheeseProductTexture (str): An adjective or phrase describing the texture of the cheese.
+CheeseProductTaste (str): An adjective or phrase describing the taste of the cheese.
+CheeseProductRind (str): An adjective or phrase describing the quality of the cheese's rind or outer covering formed due to ageing.
+CheeseProductColor (str): The color of the cheese.
+CheeseProductStyle (str): Type of the cheese, for eg: if its hard or soft
+CheeseProductIsVegetarian (bool): A boolean indicating whether the cheese product is vegetarian or not.
+CheeseProductIsOrganic (bool): A boolean indicating whether the cheese is organic or not.
+CheeseProductIsUnpasteurised (bool): A boolean indicating whether the cheese is pasteurized or not.
+CheeseProductIsPregnantOk (bool): A boolean indicating whether the cheese can be consumed by pregnant women.
+CheeseProductGeneralShape (str): The general shape of the cheese product.
+CheeseProductWaxColor (str): The color of the wax used to coat the cheese.
+CheeseProductInteriorColor (str): The color of the interior of the cheese.
+CheeseProductPrePackShape (str): Shape of the cheese product in the pre-pack stage for supermarkets.
+CheeseProductPackWeight (float): A number indicating the weight of the packaged cheese product.
+CheeseProductSlices (int): Number of slices in each cheese product pack.
+CheeseProductCheeseType (str): The type of cheese produced by the product (eg: Cheddar, stilton etc.)
+CheeseProductMilkQuality (str): An adjective describing the quality of the milk used to make the cheese.
+CheeseProductMilkQualityList (str): A list of adjectives describing the quality of the milk used to make the cheese.
+CheeseProductMilkAnimalSource (str): The Animal's name from which the discussed ingredient is sourced from. 
+CheeseProductRennetOrigin (str): The origin of the rennet that is used to synthesize the milk used to make the cheese.
+CheeseProductIngredientToMilk (str): The ingredient that is added to the milk from which the cheese is made.
+CheeseProductIngredientToMilkColor (str): The color given to the cheese due to the addition of the specific ingredient to the milk used to manufacture the cheese. 
+CheeseProductIngredients (List(str)): A list of ingredients used to manufacture the cheese product.
+CheeseProductMilkFat (int): The percentage of fat that the milk used to make the cheese contains. 
+CheeseProductMilkWater (int): The percentage of water contend that the milk used to manufacture the cheese contains.

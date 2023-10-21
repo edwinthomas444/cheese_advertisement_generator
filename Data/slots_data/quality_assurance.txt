@@ -1,0 +1,11 @@
+MedalType (str): The medal won by the cheese (eg: gold, silver etc.)
+Contest (str): The contest in which the describe cheese won accolades.
+ContestYear (str): The year the cheese won accolades.
+ContestCategory (str): The category of the contest that the cheese won accolades.
+ContestPlace (str): The place where the cheese was awarded the prize or secured accolades.
+Prize (str): The name of the prize that was awarded for the cheese.
+Position (str): The position won in the competition by the cheese.
+AnimalMilk (str): The name of the animal from which the milk is sourced.
+NameOfCheesery (str): Name of the Establishment in which the cheese is made or the Manufacturer's name.
+RegisteredAnimal (str): The animal's name whose herd is registered by the producers of the cheese.
+ManufacturePlace (str): Name of the place in or near which the cheese is made.

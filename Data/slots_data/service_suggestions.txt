@@ -1,0 +1,6 @@
+ServeWithDishList (list(str)): A list of dishes or food that the cheese can be served with.
+ListofUses (list(str)): A list of uses of the cheese (eg: grating)
+ListComparedWithCheese (list(str)): A list of other cheese types this cheese is compared with.
+BestPresentationItems (list(str)): A list of items that is best to present the cheese (eg: cheeseboard)
+ComplementaryDishes (list(str)): A list of dishes that the cheese can be best paired with (food-pairing).
+ComplementaryWines (list(str)): A list of wines that the cheese can be best paired with (wine-pairing).

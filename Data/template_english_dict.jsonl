@@ -1,0 +1,190 @@
+{"move": "1", "step": "1", "choice": "A", "sub_choice": 1, "text": "(NAME OF CHEESE)"}
+{"move": "1", "step": "1", "choice": "A", "sub_choice": 2, "text": "(NAME OF CHEESE) Cheese"}
+{"move": "1", "step": "1", "choice": "A", "sub_choice": 3, "text": "(NAME OF THE CHEESE) Cheese PDO (QUALITY) Rind (NUMBER) Kg"}
+{"move": "1", "step": "1", "choice": "A", "sub_choice": 4, "text": "(NAME OF CHEESE) Cheese PDO waxed (NUMBER) g"}
+{"move": "1", "step": "1", "choice": "A", "sub_choice": 5, "text": "(NAME OF CHEESE) (ANIMAL) Cheese"}
+{"move": "1", "step": "1", "choice": "A", "sub_choice": 6, "text": "(NAME OF CHEESE) with (INGREDIENT) (WEIGHT)"}
+{"move": "1", "step": "2", "choice": "A", "sub_choice": 1, "text": "Cheesemaker: (NAME OF THE CHEESERY)"}
+{"move": "1", "step": "2", "choice": "A", "sub_choice": 2, "text": "Main makers are (NAMES OF THE CHEESE FACILITIES)"}
+{"move": "1", "step": "2", "choice": "B", "sub_choice": 1, "text": "Made by (NAME OF THE CHEESERY) in (PLACE)."}
+{"move": "1", "step": "2", "choice": "B", "sub_choice": 2, "text": "Made in (PLACE) since (YEAR) by (NAME OF THE CHEESERY)."}
+{"move": "1", "step": "2", "choice": "B", "sub_choice": 3, "text": "Made by (NAME OF THE CHEESE STORE) who have been making (NAME OF THE CHEESE) for over (NUMBER) years."}
+{"move": "1", "step": "2", "choice": "B", "sub_choice": 4, "text": "Produced by (NAME OF THE CHEESERY) near (PLACE)."}
+{"move": "1", "step": "2", "choice": "C", "sub_choice": 1, "text": "It is made at (NAME OF THE CHEESERY) in (PLACE)."}
+{"move": "1", "step": "2", "choice": "C", "sub_choice": 2, "text": "(NAME OF THE CHEESE) is hand-made by (NAME OF THE CHEESE) at (NAME OF THE CHEESE) near (PLACE) in (REGION)."}
+{"move": "1", "step": "2", "choice": "C", "sub_choice": 3, "text": "(NAME OF THE CHEESE) is locally produced at (NAME OF THE CHEESE) in (PLACE)."}
+{"move": "1", "step": "2", "choice": "C", "sub_choice": 4, "text": "The best makers in (COUNTRY) are (NAMES OF THE CHEESE FACILITIES)"}
+{"move": "1", "step": "3", "choice": "A", "sub_choice": 1, "text": "Country of origin: (COUNTRY)\nRegion: (REGION)"}
+{"move": "1", "step": "3", "choice": "A", "sub_choice": 2, "text": "Based on a (CENTURY) century recipe."}
+{"move": "1", "step": "3", "choice": "B", "sub_choice": 1, "text": "(NAME OF THE CHEESE) is made in (PLACE)"}
+{"move": "1", "step": "3", "choice": "B", "sub_choice": 2, "text": "(NAME OF THE CHEESE MAKER) originally created (NAME OF THE CHEESE) when he was farming ON (PLACE) in (YEAR)."}
+{"move": "1", "step": "3", "choice": "B", "sub_choice": 3, "text": "(NAME OF THE CHEESE) has been made in (PLACE) for over (NUMBER) years to a traditional recipe."}
+{"move": "1", "step": "3", "choice": "B", "sub_choice": 4, "text": "Dating back to (TIME PERIOD), this cheese was brought to (PLACE) by (PEOPLE) from (PLACE)."}
+{"move": "1", "step": "3", "choice": "B", "sub_choice": 5, "text": "(NAME OF THE CHEESE) originated from (PLACE) around (CENTURY) century and took its name from (OBJECT THAT GAVE NAME TO THE CHEESE)."}
+{"move": "1", "step": "3", "choice": "B", "sub_choice": 6, "text": "It is thought that cheese making was first brought to (PLACE) in (CENTURY) century by (PEOPLE) who arrived from (PLACE) and settled in (PLACE). They in turn passed on the cheese making techniques to the local farmers of (PLACE) and thus, (NAME OF THE CHEESE) was born. (NAME OF THE CHEESE STORE) has been making (NAME OF THE CHEESE) in (PLACE) since (YEAR)."}
+{"move": "3", "step": "1", "choice": "A", "sub_choice": 1, "text": "Fat content: (NUMBER) %\nTexture: (QUALITY)\nRind: (QUALITY)\nColor: (COLOR)"}
+{"move": "3", "step": "1", "choice": "A", "sub_choice": 2, "text": "Style of Cheese: (TYPE OF CHEESE)\nVegetarian? (YES/NO)\nOrganic? (YES/NO)\nUnpasteurised? (YES/NO)\nFor Pregnant Women? (YES/NO)"}
+{"move": "3", "step": "1", "choice": "B", "sub_choice": 1, "text": "A (QUALITY) cheese."}
+{"move": "3", "step": "1", "choice": "B", "sub_choice": 2, "text": "(QUALITY) in appearance."}
+{"move": "3", "step": "1", "choice": "B", "sub_choice": 3, "text": "(QUALITY) in taste."}
+{"move": "3", "step": "1", "choice": "B", "sub_choice": 4, "text": "(QUALITY) in texture."}
+{"move": "3", "step": "1", "choice": "B", "sub_choice": 5, "text": "Shaped in (SHAPE) and coated with a (COLOR) rind."}
+{"move": "3", "step": "1", "choice": "B", "sub_choice": 6, "text": "Available as a (NUMBER) g (FORM) coated in (COLOR) wax."}
+{"move": "3", "step": "1", "choice": "B", "sub_choice": 7, "text": "(QUALITY) (TYPE OF CHEESE) with a (QUALITY) flavour."}
+{"move": "3", "step": "1", "choice": "B", "sub_choice": 8, "text": "(QUALITY) with a slight tang which is (COLOR) in color with a (QUALITY) texture."}
+{"move": "3", "step": "1", "choice": "B", "sub_choice": 9, "text": "Generally in (SHAPE) form but sometimes in (SHAPE) for supermarket pre-packs."}
+{"move": "3", "step": "1", "choice": "C", "sub_choice": 1, "text": "(CHEESE NAME) is a (QUALITY) cheese."}
+{"move": "3", "step": "1", "choice": "C", "sub_choice": 2, "text": "It has a (QUALITY) texture."}
+{"move": "3", "step": "1", "choice": "C", "sub_choice": 3, "text": "It has (COLOR) veins running through its body and a wonderful deep (COLOR) colour that marks its appeal. The interior is (COLOR)."}
+{"move": "3", "step": "1", "choice": "C", "sub_choice": 4, "text": "It is suitable for vegeterians."}
+{"move": "3", "step": "1", "choice": "C", "sub_choice": 5, "text": "(CHEESE NAME) is made to an original recipe that makes a unique (QUALITY) cheese that has a genuine (QUALITY) in texture and taste."}
+{"move": "3", "step": "1", "choice": "C", "sub_choice": 6, "text": "It is also available prepacked in (SHAPE), ready grated (in (NUMBER) g packs), ready sliced ((NUMBER) slices per pack) and from the service counter."}
+{"move": "3", "step": "2", "choice": "A", "sub_choice": 1, "text": "(QUALITY) (ANIMAL) milk cheese"}
+{"move": "3", "step": "2", "choice": "A", "sub_choice": 2, "text": "from (QUALITY) (ANIMAL) milk cheese"}
+{"move": "3", "step": "2", "choice": "A", "sub_choice": 3, "text": "made from (ANIMAL) milk"}
+{"move": "3", "step": "2", "choice": "A", "sub_choice": 4, "text": "made using (QUALITY) milk and (ORIGIN) rennet"}
+{"move": "3", "step": "2", "choice": "A", "sub_choice": 5, "text": "(QUALITY) (TYPE OF CHEESE) flavoured with (INGREDIENTS)"}
+{"move": "3", "step": "2", "choice": "A", "sub_choice": 6, "text": "(QUALITY) (TYPE OF CHEESE) carefully combined with (QUALITY) (INGREDIENTS)"}
+{"move": "3", "step": "2", "choice": "B", "sub_choice": 1, "text": "It uses (QUALITY) milk."}
+{"move": "3", "step": "2", "choice": "B", "sub_choice": 2, "text": "(CHEESE NAME) is made from (QUALITY) milk"}
+{"move": "3", "step": "2", "choice": "B", "sub_choice": 3, "text": "The cheese contains a minimum of (NUMBER) % milk fat and a maximum of (NUMBER) % water."}
+{"move": "3", "step": "2", "choice": "B", "sub_choice": 4, "text": "Several versions of (CHEESE NAME) are produced - one made from (QUALITY) milk and one from (QUALITY) milk."}
+{"move": "3", "step": "2", "choice": "B", "sub_choice": 5, "text": "Other varieties with added flavours such as (INGREDIENTS) are available."}
+{"move": "3", "step": "2", "choice": "B", "sub_choice": 6, "text": "This is made from (QUALITY) milk from the morning milking, and (QUALITY) milk from the evening milking. All the milk is (QUALITY), and (ORIGIN) rennet is used."}
+{"move": "3", "step": "2", "choice": "B", "sub_choice": 7, "text": "(INGREDIENT) is sometimes added to the milk to produce (TYPE OF CHEESE)."}
+{"move": "3", "step": "2", "choice": "B", "sub_choice": 8, "text": "It has a characteristic (COLOR) hue given by the addition of (INGREDIENT) to the milk."}
+{"move": "3", "step": "2", "choice": "B", "sub_choice": 9, "text": "(CHEESE NAME) is blended with (INGREDIENTS)."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 1, "text": "Handmade using a unique recipe developed over many years along with carefully selected starter cultures."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 2, "text": "It is based on an old fashioned traditional (CHEESE NAME) recipe with a modern twist."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 3, "text": "(CHEESE NAME) is traditionally hand-made."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 4, "text": "The cheese is still made in the traditional shape using the traditional method and skills. After the addition of starter culture and rennet to the milk, the curds are cut and scalded at a temperature of (NUMBER) \u00b0C with the whey for (NUMBER) minutes. The whey is then drained away leaving the curd which is milled and salted. The cheese is then moulded and mechanically pressed for up to (NUMBER) days and is ready for consumption at around (NUMBER) months."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 5, "text": "(CHEESE NAME) is brine dipped."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 6, "text": "(CHEESE NAME) takes (NUMBER) hours to make."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 7, "text": "The cheese is then shaped into (SHAPE) and pressed."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 8, "text": "(CHEESE NAME) is naturally smoked, using (TYPE OF WOOD)."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 9, "text": "It is gently smoked, over (TYPE OF WOOD) for (NUMBER) days."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 10, "text": "(CHEESE NAME) is left open to the air to mature which results in a (QUALITY) rind with a (COLOR) mould."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 11, "text": "It can only be produced in a (SHAPE) shape and is never pressed."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 12, "text": "Some is made in traditional (SHAPE), but the bulk is made in (SHAPE), which then makes the cheese easier to pre-pack."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 13, "text": "It is made to a traditional recipe with (ORIGIN) rennet and is crucially hand-ladled."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 14, "text": "Produced via (PROCESS) of the milk rather than by (PROCESS)."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 15, "text": "After the curds are formed they are scalded, which means that the cheese will not melt when heated."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 16, "text": "Once the curds are produced, the whey is drained off."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 17, "text": "The soft curds from their (ANIMAL) milk are ladled by hand into individual moulds and gently drained."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 18, "text": "Curds are formed and left to drain overnight. The whey is removed and the curd cut into (SHAPE) and stacked and turned every (NUMBER) minutes. The curd is milled and salted, put into (SHAPE) moulds and lightly pressed. After (NUMBER) days the mould is removed and the surfaces rubbed to form the crust and at (NUMBER) weeks skewered to allow air to enter the body of the cheese and so form the blue veins."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 19, "text": "The cheese is then sealed with cloth or other wrapping material and at about (NUMBER) weeks of age the cheese is pierced with stainless steel needles to allow air to enter the body of the cheeses. This activates the blue mould which then proceeds to break down the protein in the cheese and create the blue veins."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 20, "text": "It has (PLANT) leaves wrapped around it after it has come out of the cheese press, and finally it is given a light spraying of penicillium candidum white mould to help give the cheese its unique appearance and flavour."}
+{"move": "4", "step": "1", "choice": "A", "sub_choice": 21, "text": "This traditional method is unique to (CHEESE NAME) and is still adhered to by (NAME OF THE CHEESERY) today."}
+{"move": "4", "step": "2", "choice": "A", "sub_choice": 1, "text": "The cheese is aged for at least (NUMBER) weeks."}
+{"move": "4", "step": "2", "choice": "A", "sub_choice": 2, "text": "It is aged for a minimum of (NUMBER) months."}
+{"move": "4", "step": "2", "choice": "A", "sub_choice": 3, "text": "This cheese is matured for up to (NUMBER) years."}
+{"move": "4", "step": "2", "choice": "A", "sub_choice": 4, "text": "It is allowed to mature for up to (NUMBER) months."}
+{"move": "4", "step": "2", "choice": "A", "sub_choice": 5, "text": "The cheese ripens in (NUMBER) months."}
+{"move": "4", "step": "2", "choice": "A", "sub_choice": 6, "text": "Ageing process of the cheese ranges from (NUMBER) to (NUMBER) months."}
+{"move": "4", "step": "2", "choice": "A", "sub_choice": 7, "text": "We mature it for about (NUMBER) months."}
+{"move": "4", "step": "2", "choice": "A", "sub_choice": 8, "text": "The cheese is left to mature for (NUMBER) months."}
+{"move": "4", "step": "2", "choice": "A", "sub_choice": 9, "text": "Once made, the cheese is matured in carefully controlled conditions, and turned daily for up to (NUMBER) months, until each batch is graded, ready for sale, by the cheese maker."}
+{"move": "4", "step": "2", "choice": "A", "sub_choice": 10, "text": "Mild (CHEESE NAME) is typically sold at about (NUMBER) months of age; medium matured (CHEESE NAME) at (NUMBER) to (NUMBER) months; mature (CHEESE NAME) at around (NUMBER) months, Extra Mature at around (NUMBER) months and Vintage at (NUMBER) months or more."}
+{"move": "4", "step": "2", "choice": "A", "sub_choice": 11, "text": "As (CHEESE NAME) matures, so it becomes firmer in texture and slightly darker in colour."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 1, "text": "(CHEESE NAME) is (QUALITY) in flavour."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 2, "text": "It has a (QUALITY) taste."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 3, "text": "It has a (QUALITY) flavour."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 4, "text": "(CHEESE NAME) has a subtle (QUALITY) flavour and a hint of (QUALITY)."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 5, "text": "An outstanding (ANIMAL) cheese with a delicate yet distinctive (QUALITY) flavour."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 6, "text": "A wonderfully (QUALITY) texture with a clean (QUALITY) that wakens up your taste buds and builds to a crescendo of full (CHEESE NAME) flavour."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 7, "text": "This cheese balances the two flavours of (INGREDIENTS) to create an equal partnership."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 8, "text": "The gentle nature of this particular smoking technique creates a mild (QUALITY) smoked flavour."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 9, "text": "It is complimented by a smooth (QUALITY) flavour with a slight tang."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 10, "text": "It has a (QUALITY) background flavor."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 11, "text": "It has a delicious (QUALITY) bite on the finish."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 12, "text": "The flavor has a hint of (FOOD) on the finish."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 13, "text": "It has a (QUALITY) flavour with a nice touch of (FOOD) and a lingering finish."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 14, "text": "It has (QUALITY) flavours and a (QUALITY) bite at the end."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 15, "text": "It has a slightly (QUALITY) aftertaste."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 16, "text": "This cheese tends to be (QUALITY) tasting with a pleasant tang."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 17, "text": "As (CHEESE NAME) matures so its taste develops from the young creamy taste of mild (CHEESE NAME) to complex, lasting, (QUALITY) flavours of mature (CHEESE NAME) and beyond."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 18, "text": "(CHEESE NAME) is characterised by a (QUALITY) flavor."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 19, "text": "It has a (QUALITY) taste and aroma and is clean on the palate with a very slightly tangy finish."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 20, "text": "It has a (QUALITY) flavour which will vary with age."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 21, "text": "It is a (QUALITY) cheese, with a (QUALITY) taste incorporating (ORIGIN) milk character, (QUALITY) notes."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 22, "text": "It has a (QUALITY) centre and a taste similar to that of (FOOD)."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 23, "text": "The cheese has an (QUALITY) blend of sweet and savoury flavours."}
+{"move": "5", "step": "1", "choice": "A", "sub_choice": 24, "text": "The taste resembles (FOOD) and there is a distinctive (FOOD) aroma."}
+{"move": "6", "step": "1", "choice": "A", "sub_choice": 1, "text": "Best enjoyed at room temperature."}
+{"move": "6", "step": "1", "choice": "A", "sub_choice": 2, "text": "It is best served at room temperature."}
+{"move": "6", "step": "1", "choice": "A", "sub_choice": 3, "text": "If serving on a cheeseboard remove the cheese from the fridge (TIME FRAME) before serving, to allow it to come to room temperature and to develop its full texture and flavour."}
+{"move": "6", "step": "2", "choice": "A", "sub_choice": 1, "text": "A great addition to any cheeseboard."}
+{"move": "6", "step": "2", "choice": "A", "sub_choice": 2, "text": "Perfect for (DISH)."}
+{"move": "6", "step": "2", "choice": "A", "sub_choice": 3, "text": "Ideal as a starter (served warm, with a (FOOD)), in salads or simply as part of a cheeseboard."}
+{"move": "6", "step": "2", "choice": "A", "sub_choice": 4, "text": "Perfectly smooth, creamy and full flavoured when added to a (DISH)."}
+{"move": "6", "step": "2", "choice": "A", "sub_choice": 5, "text": "Cubed on (DISH) with a (FOOD)."}
+{"move": "6", "step": "2", "choice": "A", "sub_choice": 6, "text": "Scattered over a (DISH)."}
+{"move": "6", "step": "2", "choice": "A", "sub_choice": 7, "text": "Can be served in (SHAPE)."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 1, "text": "(CHEESE NAME) is suitable for use on a cheeseboard or in cooking."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 2, "text": "It makes an excellent dessert cheese."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 3, "text": "It is ideal for serving as part of a cheeseboard."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 4, "text": "Serve with a selection of (TYPES OF CHEESE) on a cheeseboard."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 5, "text": "It makes a welcome addition to any cheeseboard."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 6, "text": "It is also at home on any cheeseboard where its (QUALITY) contrasts with the more (QUALITY) flavours of (QUALITY) cheeses."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 7, "text": "It is suitable for (USE) and (USE)."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 8, "text": "The cheese is also a fantastic cooking cheese and makes an indulgent (DISH)."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 9, "text": "It melts beautifully, adds colour to a cheeseboard and to (DISH) and makes a nice flavoursome addition to (DISH) either grated or cubed."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 10, "text": "It is also very versatile and can be used in hot or cold recipes."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 11, "text": "It is superb for crumbling into (DISHES). It also works well with (DISHES) with a (FOOD) base."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 12, "text": "This cheese is used as an ingredient in (DISHES)."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 13, "text": "Use grated in a huge variety of recipes."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 14, "text": "Serve on a cheeseboard or use in (DISHES)."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 15, "text": "(CHEESE NAME) is an excellent melting cheese and can be incorporated into cooked dishes or sprinkled over the top."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 16, "text": "(CHEESE NAME) can be served on a cheeseboard or grated and added to (DISHES)."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 17, "text": "Use in cooking, in sandwiches, on a cheeseboard or simply cut into cubes and serve as a quick snack."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 18, "text": "Grate and mix with (FOOD) to make cheese on toast or use to make (DISH)."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 19, "text": "(CHEESE NAME) can be served on a cheeseboard or grated and included in (DISHES) or sprinkled over (DISHES) and grilled."}
+{"move": "6", "step": "2", "choice": "B", "sub_choice": 20, "text": "(CHEESE NAME) is one of the classic cheeses to include on a cheeseboard. Use it in cooking - try it in (DISH), on toast or sprinkled over (DISHES)."}
+{"move": "6", "step": "3", "choice": "A", "sub_choice": 1, "text": "A beautiful complement to (FOOD)."}
+{"move": "6", "step": "3", "choice": "A", "sub_choice": 2, "text": "A lovely accompaniment to (FOOD)."}
+{"move": "6", "step": "3", "choice": "A", "sub_choice": 3, "text": "Sliced on a (FOOD)."}
+{"move": "6", "step": "3", "choice": "A", "sub_choice": 4, "text": "In salad dressings, in cooking or simply served with (FOOD)."}
+{"move": "6", "step": "3", "choice": "A", "sub_choice": 5, "text": "Best enjoyed:\nAccompanying (FOOD)\nWith a (FOOD)."}
+{"move": "6", "step": "3", "choice": "B", "sub_choice": 1, "text": "Serve simply with (FOOD)."}
+{"move": "6", "step": "3", "choice": "B", "sub_choice": 2, "text": "(CHEESE NAME) is traditionally served with a slice of (FOOD)."}
+{"move": "6", "step": "3", "choice": "B", "sub_choice": 3, "text": "Our suggestion for this one is on top of a slab of (FOOD)."}
+{"move": "6", "step": "3", "choice": "B", "sub_choice": 4, "text": "Serve sliced in crusty rolls with a (FOOD)."}
+{"move": "6", "step": "3", "choice": "B", "sub_choice": 5, "text": "Grill on (FOOD) with (FOOD) and (FOOD)."}
+{"move": "6", "step": "3", "choice": "B", "sub_choice": 6, "text": "(CHEESE NAME) is delicious with (FOODS)."}
+{"move": "6", "step": "3", "choice": "B", "sub_choice": 7, "text": "Traditional uses of (CHEESE NAME) include serving with (FOOD) for a perfect lunchtime or tea time snack; with (FOOD) or with (FOOD)."}
+{"move": "6", "step": "3", "choice": "B", "sub_choice": 8, "text": "The cheese is a spreading cheese well partnered by (FOOD) or stirred into (DISH)."}
+{"move": "6", "step": "3", "choice": "B", "sub_choice": 9, "text": "Serve on its own or use in cooking to make (DISHES) to serve with (FOOD)."}
+{"move": "6", "step": "4", "choice": "A", "sub_choice": 1, "text": "Cheese and wine are a match made in heaven and which wine you enjoy with which cheese relies a lot on personal preference."}
+{"move": "6", "step": "4", "choice": "A", "sub_choice": 2, "text": "On its own it goes very well with either a glass of beer or red wine."}
+{"move": "6", "step": "4", "choice": "A", "sub_choice": 3, "text": "(NAME OF THE DRINK) is the perfect partner."}
+{"move": "6", "step": "4", "choice": "A", "sub_choice": 4, "text": "Our suggestion for this one is a (NAME OF THE DRINK)."}
+{"move": "6", "step": "4", "choice": "A", "sub_choice": 5, "text": "It goes splendidly with a (NAME OF THE DRINK)."}
+{"move": "6", "step": "4", "choice": "A", "sub_choice": 6, "text": "It is traditionally served with (NAME OF THE DRINK)."}
+{"move": "6", "step": "4", "choice": "A", "sub_choice": 7, "text": "It is worth trying with a (DRINK NAME) or a (DRINK NAME)."}
+{"move": "6", "step": "4", "choice": "A", "sub_choice": 8, "text": "This cheese is perfect with a chilled glass of (NAME OF THE DRINK)."}
+{"move": "6", "step": "4", "choice": "A", "sub_choice": 9, "text": "As an accompaniment try a good (NAME OF THE DRINK) or (NAME OF THE DRINK)."}
+{"move": "6", "step": "4", "choice": "A", "sub_choice": 10, "text": "Enjoy with a traditional (NAME OF THE DRINK) or a full bodied glass of (NAME OF THE DRINK)."}
+{"move": "6", "step": "4", "choice": "A", "sub_choice": 11, "text": "A wonderful companion to (NAME OF THE DRINK) or (NAME OF THE DRINK)."}
+{"move": "6", "step": "4", "choice": "A", "sub_choice": 12, "text": "It is also delicious served after dinner with a glass of (NAME OF THE DRINK) or (NAME OF THE DRINK)."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 1, "text": "(CHEESE NAME) is a Protected Designation of Origin."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 2, "text": "(CHEESE NAME) is a cheese awarded with a Protected Designation of Origin (PDO)."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 3, "text": "(CHEESE NAME) is a Protected Designation of Origin (PDO) cheese which guarantees it has been made on the farm by hand, using authenticated methods."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 4, "text": "A very special Award Winning (TYPE OF CHEESE) cheese awarded a PDO for its authentic taste."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 5, "text": "It has a Protected Designation of Origin (PDO) which requires that only the milk produced in (PLACE) be used to make the cheese."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 6, "text": "The (TYPE OF CHEESE) recipe and methods are protected and accredited with Protected Designation of Origin (PDO) status. This is recognised worldwide and safeguards the future production and quality of one of the (PLACE) most cherished treasures."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 7, "text": "(CHEESE NAME) has a Protected Designation of Origin (PDO) and can only be made in the environs of (PLACE) from milk produced in (PLACE)."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 8, "text": "It is made on farms in (PLACE) and (NUMBER) makers are licensed to use the EU Protected Designation of Origin (TYPE OF CHEESE)."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 9, "text": "(CHEESE NAME) is honoured with a certification trademark and Protected Designation of Origin status, meaning it can only be made in (PLACE) to a specified recipe."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 10, "text": "Producers of the cheese must have a registered herd of (RACE) (ANIMAL), the milk from which is used to make the cheese."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 11, "text": "A (METAL) medal winner at the (CONTEST)."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 12, "text": "(CHEESE NAME) won a (METAL) medal at the (YEAR) (CONTEST)."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 13, "text": "This cheese won the coveted (CATEGORY) (YEAR)."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 14, "text": "It won a (METAL) medal at the (YEAR) (CONTEST) for the (CATEGORY)."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 15, "text": "(CHEESE NAME) became (PRIZE) at the (CONTEST) in (YEAR)."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 16, "text": "Winner of the prestigious (PRIZE) for (CATEGORY) at the (CONTEST)."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 17, "text": "All the cheese produced at (NAME OF THE CHEESERY) is made using only locally sourced milk from farms no more than (NUMBER) km away. Every cheese is hand crafted to the highest quality standards using time honoured traditional methods."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 18, "text": "(CHEESE NAME) is a past (METAL) medal winner at the (CONTEST) and was (PRIZE) at the (CONTEST)."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 19, "text": "Made by local award winning company (NAME OF THE CHEESERY)."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 20, "text": "This cheese came (ORDINAL) in the (CONTEST) (YEAR)."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 21, "text": "It has become increasingly popular helped by numerous cheese show victories, including a victory in the (YEAR) (CONTEST) which gave the cheese its first supermarket listing."}
+{"move": "7", "step": "1", "choice": "A", "sub_choice": 22, "text": "(CHEESE NAME) was crowned (PRIZE) at the (CONTEST) held in (CITY) in (YEAR) and was runner up in (YEAR)."}

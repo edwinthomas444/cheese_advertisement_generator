@@ -1,0 +1,188 @@
+All slots:
+'(ORIGIN)', 
+'(CITY)', 
+'(CONTEST)', 
+'(PRIZE)', 
+'(REGION)', 
+'(INGREDIENTS)', 
+'(FOOD)', 
+'(NUMBER)', 
+'(CATEGORY)', 
+'(COLOR)', 
+'(METAL)', 
+'(PLACE)', 
+'(CENTURY)', 
+'(NAME OF CHEESE)', 
+'(ANIMAL)', 
+'(WEIGHT)', 
+'(PLANT)', 
+'(DISH)', 
+'(TIME FRAME)', 
+'(PROCESS)', 
+'(FOODS)', 
+'(NAMES OF THE CHEESE FACILITIES)', 
+'(NAME OF THE CHEESE)', 
+'(USE)', 
+'(COUNTRY)', 
+'(OBJECT THAT GAVE NAME TO THE CHEESE)', 
+'(TYPE OF CHEESE)', 
+'(DISHES)', 
+'(DRINK NAME)', 
+'(NAME OF THE CHEESE STORE)', 
+'(FORM)', 
+'(CHEESE NAME)', 
+'(ORDINAL)', 
+'(PDO)', 
+'(INGREDIENT)', 
+'(RACE)', 
+'(TIME PERIOD)', 
+'(SHAPE)', 
+'(QUALITY)', 
+'(NAME OF THE CHEESE MAKER)', 
+'(TYPES OF CHEESE)', 
+'(PEOPLE)', 
+'(YEAR)', 
+'(NAME OF THE CHEESERY)', 
+'(NAME OF THE DRINK)', 
+'(TYPE OF WOOD)'
+
+
+Prompt definition:
+
+Fill the slots "{slots}" with words/phrases only from the text if present else specify "None": {text}
+
+Step 1: Filling the slots
+Return a JSON by filling the below slots with values: "{slots and slot descriptions}
+
+Step 2: Generating descriptions
+Without excluding any of the below slots generate a persuasive, professional and concise single paragraph text describing the process of cheese making : {randomly chosen 50% subset of slots}
+
+
+Section 1:
+
+CheeseDescriptionName
+    NameOfCheese (str): Name of the Cheese
+    QualityOfRind (str): Adjective that describes the Rind in the cheese description
+    AnimalSource (str):  Animal's name from which the cheese is sourced.
+    MainIngredient (str): Main Ingredient used in Manufacturing the Cheese other than the milk mentioned in the description.
+    MainIngredientWeight (int): Weight of the MainIngredient excluding the unit, used in manufacturing the Cheese other than the milk, which is mentioned in the description.  
+
+CheeseDescriptionManufacturer
+    NameOfCheesery (str): Name of the Establishment in which the cheese is made or the Manufacturer's name. 
+    NamesOfFacilities (List(str)): A list of the names of the Manufacturers of the Cheese. 
+    ManufacturePlace (str): Name of the place in or near which the cheese is made.
+    ManufacturedSinceDate (str): Date from which the cheese is being manufactured. 
+    
+CheeseDescriptionProvenance:
+    CheeseOriginatedDate (str): Era or Date from which cheese making originated by the first cheese creators based on historical references.
+    CheeseCreatorMovedFromPlace (str): Place from which creators of the cheese came from based on historical references.
+    CheeseCreatorMovedToPlace (str): Place to which the creators of the cheese moved to make the cheese based on historical references.
+    CheeseNameFromObject (str): Name of the object from which the cheese got its name based on historical references. 
+
+
+Section 2:
+
+ProductDescriptionCharacterestics:
+    CheeseProductFatContent (int): Fat Content percentage excluding the percentage symbol present within the cheese.
+    CheeseProductTexture (str): An adjective or phrase describing the texture of the cheese.
+    CheeseProductTaste (str): An adjective or phrase describing the taste of the cheese.
+    CheeseProductRind (str): An adjective or phrase describing the quality of the cheese's rind or outer covering formed due to ageing.
+    CheeseProductColor (str): The color of the cheese.
+    CheeseProductStyle (str): Type of the cheese, for eg: if its hard or soft
+    CheeseProductIsVegetarian (bool): A boolean indicating whether the cheese product is vegetarian or not.
+    CheeseProductIsOrganic (bool): A boolean indicating whether the cheese is organic or not.
+    CheeseProductIsUnpasteurised (bool): A boolean indicating whether the cheese is pasteurized or not.
+    CheeseProductIsPregnantOk (bool): A boolean indicating whether the cheese can be consumed by pregnant women.
+    CheeseProductGeneralShape (str): The general shape of the cheese product.
+    CheeseProductWaxColor (str): The color of the wax used to coat the cheese.
+    CheeseProductInteriorColor (str): The color of the interior of the cheese.
+    CheeseProductPrePackShape (str): Shape of the cheese product in the pre-pack stage for supermarkets.
+    CheeseProductPackWeight (float): A number indicating the weight of the packaged cheese product.
+    CheeseProductSlices (int): Number of slices in each cheese product pack.
+
+ProductDescriptionIngredients:
+    CheeseProductCheeseType (str): The type of cheese produced by the product (eg: Cheddar, stilton etc.)
+    CheeseProductMilkQuality (str): An adjective describing the quality of the milk used to make the cheese.
+    CheeseProductMilkQualityList (str): A list of adjectives describing the quality of the milk used to make the cheese.
+    CheeseProductMilkAnimalSource (str): The Animal's name from which the discussed ingredient is sourced from. 
+    CheeseProductRennetOrigin (str): The origin of the rennet that is used to synthesize the milk used to make the cheese.
+    CheeseProductIngredientToMilk (str): The ingredient that is added to the milk from which the cheese is made.
+    CheeseProductIngredientToMilkColor (str): The color given to the cheese due to the addition of the specific ingredient to the milk used to manufacture the cheese. 
+    CheeseProductIngredients (List(str)): A list of ingredients used to manufacture the cheese product.
+    CheeseProductMilkFat (int): The percentage of fat that the milk used to make the cheese contains. 
+    CheeseProductMilkWater (int): The percentage of water contend that the milk used to manufacture the cheese contains.
+
+
+Section 3:
+
+ProcessDescription
+    CheeseName (str): The type of cheese which is used to make the product.
+    TemperatureCurd (float): The temperature in degree celcius (without the unit) that the curd is heated to make the cheese.
+    MinutesHeatedCurd (int): The time in minutes (without the unit) that the curd is heated to make the cheese.
+    DaysMouldPressing (int): The number of days the moulded cheese is mechanically pressed.
+    WeeksMouldResting (int): The number of weeks the pressed cheese is left to rest before further processing.
+    SkeweringAfterWeeks (int): The number of weeks after which the cheese is skewered to allow air to enter.
+    ConsumptionAfterMonths (int): The number of months after processing the cheese that is ready for consumption.
+    RindQuality (str): The quality of the rind that results from the process of making the cheese.
+    MouldColor (str): The colour of the mould formed as a result of the process of making the cheese.
+    TypeWood (str): The type of wood over which the cheese is smoked or heated.
+    ProcessTimeInHours (int): The time in hours that is consumed in the cheese making process.
+    ProcessingTypeOfMilkUsed (str): The type of processing applied over the milk to produce the cheese.
+    ProcessingTypeOfMilkNotUsed (str): The type of processing that is not applied over the milk to produce the cheese.
+    AnimalMilk (str): The name of the animal from which the milk is sourced.
+    CurdCutShape (str): The shape the curd is cut into during the process of making the cheese.
+    CurdTurnIntervalMinutes (int): The number of minutes after which the curd is turned.
+    MouldShape (str): The shape the mould the curd is shaped into.
+    OriginOfRenet (str): The origin of the renet used to make the cheese.
+    CheeseAgingWeeks (int): The number of weeks the cheese is aged before further processing.
+    PlantLeafWrap (str): The name of the plant whose leaves are wrapped around the cheese after it comes out the press.
+    NameOfCheesery (str): Name of the Establishment in which the cheese is made or the Manufacturer's name.
+    
+AgingDescription
+    CheeseAgingDays (int): The number of days the cheese is aged before its ready for consumption.
+    CheeseAgingWeeks (int): The number of weeks the cheese is aged before its ready for consumption.
+    CheeseAgingMonths (int): The number of months the cheese is aged before its ready for consumption.
+    CheeseAgingYears (int): The number of years the cheese is aged before its ready for consumption.
+    CheeseMildAgingMonths (int): The number of months the mild cheese is aged before its ready for consumption.
+    CheeseMatureAgingMonths (int): The number of months the mature cheese is aged before its ready for consumption.
+    CheeseExtraMatureAgingMonths (int): The number of months the extra mature cheese is aged before its ready for consumption.
+    CheeseVintageAgingMonths (int): The number of months the vintage cheese is aged before its ready for consumption.
+
+Section 4:
+
+CheeseFlavourAndAroma
+    CheeseName (str): The type of cheese which is used to make the product.
+    TasteQuality (str): An adjective or phrase that describes the taste or flavour of the cheese.
+    TasteQualityList (list(str)): A list of adjectives or phrases describing the taste or flavour of the cheese.
+    IngredientsList (list(str)): A list of ingredients that is used to describe the taste of the cheese.
+    AfterTaste (str): An adjective or phrase describing the after taste of the cheese.
+    FoodComparison (str): A dish or food which is used to compare the taste of the cheese with.
+    AromaQuality (str): An adjective or phrase used to describe the aroma of the cheese.
+
+Section 5:
+
+ServingSuggestions
+    UnFreezeTime (int): The time to keep the cheese outside after refrigeration before its served.
+    ServeWithDishList (list(str)): A list of dishes or food that the cheese can be served with.
+    ListofUses (list(str)): A list of uses of the cheese (eg: grating)
+    ListComparedWithCheese (list(str)): A list of other cheese types this cheese is compared with.
+    BestPresentationItems (list(str)): A list of items that is best to present the cheese (eg: cheeseboard)
+    ComplementaryDishes (list(str)): A list of dishes that the cheese can be best paired with (food-pairing).
+    ComplementaryWines (list(str)): A list of wines that the cheese can be best paired with (wine-pairing).
+
+Section 6:
+
+QualityAssurance
+    CheeseName (str): The type of cheese which is used to make the product.
+    MedalType (str): The medal won by the cheese (eg: gold, silver etc.)
+    Contest (str): The contest in which the describe cheese won accolades.
+    ContestYear (str): The year the cheese won accolades.
+    ContestCategory (str): The category of the contest that the cheese won accolades.
+    ContestPlace (str): The place where the cheese was awarded the prize or secured accolades.
+    Prize (str): The name of the prize that was awarded for the cheese.
+    Position (str): The position won in the competition by the cheese.
+    AnimalMilk (str): The name of the animal from which the milk is sourced.
+    NameOfCheesery (str): Name of the Establishment in which the cheese is made or the Manufacturer's name.
+    RegisteredAnimal (str): The animal's name whose herd is registered by the producers of the cheese.
+    ManufacturePlace (str): Name of the place in or near which the cheese is made.
+    

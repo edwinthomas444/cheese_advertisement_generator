@@ -1,0 +1,7 @@
+CheeseName (str): The type of cheese which is used to make the product.
+TasteQuality (str): An adjective or phrase that describes the taste or flavour of the cheese.
+TasteQualityList (list(str)): A list of adjectives or phrases describing the taste or flavour of the cheese.
+IngredientsList (list(str)): A list of ingredients that is used to describe the taste of the cheese.
+AfterTaste (str): An adjective or phrase describing the after taste of the cheese.
+FoodComparison (str): A dish or food which is used to compare the taste of the cheese with.
+AromaQuality (str): An adjective or phrase used to describe the aroma of the cheese.

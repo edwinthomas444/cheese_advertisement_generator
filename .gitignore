@@ -1,0 +1,5 @@
+.ipynb_checkpoints
+OPEN_AI_API_KEY.txt
+*.zip
+*.docx
+__pycache__

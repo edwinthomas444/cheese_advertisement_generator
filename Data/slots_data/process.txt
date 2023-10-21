@@ -1,0 +1,29 @@
+CheeseName (str): The type of cheese which is used to make the product.
+TemperatureCurd (float): The temperature in degree celcius (without the unit) that the curd is heated to make the cheese.
+MinutesHeatedCurd (int): The time in minutes (without the unit) that the curd is heated to make the cheese.
+DaysMouldPressing (int): The number of days the moulded cheese is mechanically pressed.
+WeeksMouldResting (int): The number of weeks the pressed cheese is left to rest before further processing.
+SkeweringAfterWeeks (int): The number of weeks after which the cheese is skewered to allow air to enter.
+ConsumptionAfterMonths (int): The number of months after processing the cheese that is ready for consumption.
+RindQuality (str): The quality of the rind that results from the process of making the cheese.
+MouldColor (str): The colour of the mould formed as a result of the process of making the cheese.
+TypeWood (str): The type of wood over which the cheese is smoked or heated.
+ProcessTimeInHours (int): The time in hours that is consumed in the cheese making process.
+ProcessingTypeOfMilkUsed (str): The type of processing applied over the milk to produce the cheese.
+ProcessingTypeOfMilkNotUsed (str): The type of processing that is not applied over the milk to produce the cheese.
+AnimalMilk (str): The name of the animal from which the milk is sourced.
+CurdCutShape (str): The shape the curd is cut into during the process of making the cheese.
+CurdTurnIntervalMinutes (int): The number of minutes after which the curd is turned.
+MouldShape (str): The shape the mould the curd is shaped into.
+OriginOfRenet (str): The origin of the renet used to make the cheese.
+CheeseAgingWeeks (int): The number of weeks the cheese is aged before further processing.
+PlantLeafWrap (str): The name of the plant whose leaves are wrapped around the cheese after it comes out the press.
+NameOfCheesery (str): Name of the Establishment in which the cheese is made or the Manufacturer's name.
+CheeseAgingDays (int): The number of days the cheese is aged before its ready for consumption.
+CheeseAgingWeeks (int): The number of weeks the cheese is aged before its ready for consumption.
+CheeseAgingMonths (int): The number of months the cheese is aged before its ready for consumption.
+CheeseAgingYears (int): The number of years the cheese is aged before its ready for consumption.
+CheeseMildAgingMonths (int): The number of months the mild cheese is aged before its ready for consumption.
+CheeseMatureAgingMonths (int): The number of months the mature cheese is aged before its ready for consumption.
+CheeseExtraMatureAgingMonths (int): The number of months the extra mature cheese is aged before its ready for consumption.
+CheeseVintageAgingMonths (int): The number of months the vintage cheese is aged before its ready for consumption.
