@@ -45,6 +45,57 @@ class BertPipeline:
         return ds
 
 
+
+class GPTPipeline:
+    def __init__(self,
+                 tokenizer,
+                 max_len_context,
+                 max_len_text,
+                 max_len_model,
+                 **kwargs):
+        self.tokenizer = tokenizer
+        self.max_len_context = max_len_context
+        self.max_len_text = max_len_text
+        self.max_len_model = max_len_model
+
+    def __call__(self, row):
+        context, text = row['input'], row['output']
+
+        context = self.tokenizer.tokenize(context)[:self.max_len_context-2]
+        text = self.tokenizer.tokenize(text)[:self.max_len_text-1]
+
+        combined_tokens = [self.tokenizer.bos_token] + context + [self.tokenizer.sep_token] \
+                            + text + [self.tokenizer.eos_token]
+        
+        test_tokens = [self.tokenizer.bos_token] + context + [self.tokenizer.sep_token]
+        
+        # truncate and pad tokens
+        combined_tokens = combined_tokens[:self.max_len_model]
+        pad_token_len = self.max_len_model - len(combined_tokens)
+        combined_tokens = combined_tokens + [self.tokenizer.pad_token]*(pad_token_len)
+
+        token_ids = self.tokenizer.convert_tokens_to_ids(combined_tokens)
+        test_token_ids = self.tokenizer.convert_tokens_to_ids(test_tokens)
+
+        # prepare the labels and target ids are shifted inside the decoder model forward pass
+        decoder_target_ids = [x for x in token_ids]
+        
+        attention_mask = [1 if x!=self.tokenizer.pad_token_id else 0 for x in token_ids]
+
+        ds = {
+            'input_ids': token_ids,
+            'attention_mask': attention_mask,
+            'labels': decoder_target_ids,
+            'test_token_ids': test_token_ids
+        }
+
+        return ds
+
+
+        
+    
+
+
         
     
 

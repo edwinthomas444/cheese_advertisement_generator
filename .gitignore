@@ -4,3 +4,4 @@ OPEN_AI_API_KEY.txt
 *.docx
 __pycache__
 .vscode/
+core

@@ -18,13 +18,16 @@ class CheeseDescriptionsDataset(Dataset):
             for file in lines:
                 line = lines[file]
                 for rhet_tag in line:
+                    # Try training on only 1 task
+                    # if rhet_tag == 'identification':
                     text = line[rhet_tag]['text']
                     slots = line[rhet_tag]['slots']
                     formatted_slot = ''
                     for slot_key, slot_value in slots.items():
                         formatted_slot+= '<'+slot_key+':'+slot_value+'>'
-                    task_input.append(text)
-                    task_output.append(formatted_slot)
+                    task_output.append(text)
+                    task_input.append(formatted_slot)
+            # print('\n len of task output: ', len(task_output))
         
         data = {'input':task_input, 'output':task_output}
         df = pd.DataFrame(data=data, columns=['input','output'])
