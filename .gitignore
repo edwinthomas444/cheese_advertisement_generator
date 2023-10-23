@@ -5,3 +5,4 @@ OPEN_AI_API_KEY.txt
 __pycache__
 .vscode/
 core
+checkpoints

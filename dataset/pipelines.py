@@ -64,15 +64,16 @@ class GPTPipeline:
         context = self.tokenizer.tokenize(context)[:self.max_len_context-2]
         text = self.tokenizer.tokenize(text)[:self.max_len_text-1]
 
-        combined_tokens = [self.tokenizer.bos_token] + context + [self.tokenizer.sep_token] \
-                            + text + [self.tokenizer.eos_token]
+        # [self.tokenizer.sep_token]
+        combined_tokens = [self.tokenizer.bos_token] + context + text + [self.tokenizer.eos_token]
         
-        test_tokens = [self.tokenizer.bos_token] + context + [self.tokenizer.sep_token]
+        test_tokens = [self.tokenizer.bos_token] + context
         
         # truncate and pad tokens
         combined_tokens = combined_tokens[:self.max_len_model]
         pad_token_len = self.max_len_model - len(combined_tokens)
-        combined_tokens = combined_tokens + [self.tokenizer.pad_token]*(pad_token_len)
+        # apply left-padding instead
+        combined_tokens = [self.tokenizer.pad_token]*(pad_token_len) + combined_tokens
 
         token_ids = self.tokenizer.convert_tokens_to_ids(combined_tokens)
         test_token_ids = self.tokenizer.convert_tokens_to_ids(test_tokens)

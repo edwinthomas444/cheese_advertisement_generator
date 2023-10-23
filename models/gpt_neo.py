@@ -676,7 +676,8 @@ class GPTNeoForCausalLM(GPTNeoPreTrainedModel):
 
             # only pay attention to non-pad tokens
             shifted_decoder_input_ids = labels[..., :-1]
-            active_loss_indices = (shifted_decoder_input_ids!=0).contiguous().view(-1)
+            # print('\n shifted decoder input ids: ', (shifted_decoder_input_ids!=self.config.eos_token_id), self.config.eos_token_id)
+            active_loss_indices = (shifted_decoder_input_ids!=self.config.eos_token_id).contiguous().view(-1)
 
             active_logits = shift_logits.view(
                 -1, shift_logits.size(-1))[active_loss_indices]

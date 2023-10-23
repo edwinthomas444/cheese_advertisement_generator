@@ -12,6 +12,27 @@ import random
 import os
 # os.environ["CUDA_VISIBLE_DEVICES"] = "0, 1"
 
+# saving checkpoints
+def save_checkpoint(
+        save_dir,
+        model,
+        epoch
+):
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir, exist_ok=True)
+
+    output_model_file = os.path.join(save_dir, f"model.bin")
+    # saving epoch meta data with config file name
+    output_config_file = os.path.join(save_dir, f"config_{epoch}.json")
+
+    model.eval()
+    model_save = model.module if hasattr(model, 'module') else model
+    config_save = model.module.config if hasattr(
+        model, 'module') else model.config
+    # save model checkpoint
+    torch.save(model_save.state_dict(), output_model_file)
+    # save config
+    config_save.to_json_file(output_config_file)
 
 def main():
     print("Current device?", torch.cuda.current_device())
@@ -24,10 +45,11 @@ def main():
     #                                           pad_token='<|pad|>',
     #                                           sep_token='<|sep|>')
     tokenizer = GPT2Tokenizer.from_pretrained(gpt_model_name,
-                                              bos_token='<mask>',
+                                              bos_token='<|endoftext|>',
                                               eos_token='<|endoftext|>',
                                               pad_token='<|endoftext|>',
-                                              sep_token='<|endoftext|>')
+                                              sep_token='<|endoftext|>',
+                                              padding_side = 'left')
 
     # innitialize dataset
     pipeline = GPTPipeline(tokenizer=tokenizer,
@@ -82,7 +104,7 @@ def main():
     gradient_accumulation_steps = 1
     warmup_proportion = 0.1
     epochs = 100
-    validate_steps = 10
+    validate_steps = 50
     device = torch.device("cuda")
 
     # innitialize model from pretrained checkpoint
@@ -91,7 +113,7 @@ def main():
     # decoder configs (greedy search innitialization)
     model.config.min_length = 1
     model.config.max_length = 350
-    model.config.eos_token_id = [tokenizer.bos_token_id]
+    model.config.eos_token_id = tokenizer.eos_token_id
     model.config.bos_token_id = tokenizer.bos_token_id
     model.config.pad_token_id = tokenizer.pad_token_id
     model.config.num_beams = 1
@@ -131,6 +153,7 @@ def main():
     scheduler = get_linear_schedule_with_warmup(
         optimizer, num_warmup_steps=num_warmup_steps, num_training_steps=total_steps)
 
+    val_loss_min = 100000
     # start training cycle
     for ep in trange(0,
                      epochs,
@@ -182,11 +205,11 @@ def main():
                 model.eval()
                 
                 with torch.no_grad():
-                    val_loss_total = 0.0
+                    val_loss_list = []
                     pred_list, inp_list, dec_list = [], [], []
                     for val_step, val_batch in enumerate(valid_bar):
-                        if val_step != 0:
-                            continue
+                        # if val_step >30:
+                        #     continue
                         val_batch, meta_batch = val_batch[:-1], val_batch[-1]
                         inp = [tens.to(device) for tens in val_batch]
                         input_ids, attention_mask, labels = inp
@@ -197,12 +220,12 @@ def main():
                                           labels=labels)
 
                         valid_loss = model_out.loss.mean()
-                        val_loss_total+= valid_loss
+                        val_loss_list.append(valid_loss)
                         valid_bar.set_description(
                             'Iter (loss=%5.3f)' % valid_loss.item()
                         )
-                        # get the generated text in list of size valid batch size
-                        test_token_ids = meta_batch[0][1:].unsqueeze(0).to(device)
+                        # only storing the first prediction of the current batch
+                        test_token_ids = meta_batch[0].unsqueeze(0).to(device)
                         # print('\n\n test tokens len: ', len(test_token_ids))
                         # print('\n Test tokens: ', test_token_ids)
                         
@@ -217,22 +240,36 @@ def main():
                         #         temperature=0.9,
                         #         max_length=300), skip_special_tokens=False)
                         
-                        input = tokenizer.batch_decode(input_ids, skip_special_tokens = True)
-                        dec_input = tokenizer.batch_decode(labels, skip_special_tokens = True)
+                        input = tokenizer.batch_decode([input_ids[0]], skip_special_tokens = True)
+                        dec_input = tokenizer.batch_decode([labels[0]], skip_special_tokens = True)
 
                         pred_list.extend(preds)
                         inp_list.extend(input)
                         dec_list.extend(dec_input)
                         
                     # random display
-                    # disp_ind = random.randint(0, len(inp_list)-1)
-                    disp_ind = 0
+                    disp_ind = random.randint(0, len(inp_list)-1)
+                    print('\n display ind: ', disp_ind)
+                    # disp_ind = 0
                     display_inp, display_pred, display_gt = inp_list[disp_ind], pred_list[disp_ind], dec_list[disp_ind]
-                    val_loss_total = val_loss_total/len(valid_loader)
+                    val_loss_total = sum(val_loss_list)/len(val_loss_list)
+
                     print('\n\n Input Text: ', display_inp)
                     print('\n Pred: ', display_pred)
                     print('\n Actual: ', display_gt)
                     print(f'\n Total val loss: {val_loss_total}')
+
+                    # saving checkpoints
+                    if val_loss_total <= val_loss_min:
+                        val_loss_min = val_loss_total
+                        # save the checkpoint
+                        print(f'\n Saving Checkpoint for val loss: {val_loss_min}')
+                        save_checkpoint(save_dir = './checkpoints',
+                                        model = model,
+                                        epoch = ep)
+
+
+                    
 
 if __name__ == '__main__':
     main()
