@@ -21,6 +21,7 @@ def bert_base_collator(batch):
 
     return batch_t
 
+
 # gpt collator
 def gpt_collator(batch):
     batch_t = [[] for _ in range(4)]
@@ -31,14 +32,16 @@ def gpt_collator(batch):
             belem['attention_mask'], dtype=torch.long))
         batch_t[2].append(torch.tensor(
             belem['labels'], dtype=torch.long))
-        batch_t[3].append(torch.tensor(
-            belem['test_token_ids'], dtype=torch.long))
+
+    # for the test token ids, left pad to max length of a tensor in the given batch
+    max_len = max([len(x['test_token_ids']) for x in batch])
+    for x in batch:
+        padded = [50256]*(max_len-len(x['test_token_ids']))+x['test_token_ids']
+        batch_t[3].append(torch.tensor(padded, dtype=torch.long))
 
     # stack tensors along batch dim
-    for i in range(3):
-        # print("\n ",i,': ')
-        # for x in batch_t[i]:
-        #     print(x.shape)
+    for i in range(4):
         batch_t[i] = torch.stack(batch_t[i], dim=0)
 
+    # for test test token ids left pad to length of the longest element in batch
     return batch_t

@@ -210,9 +210,5 @@ def main():
                     print('\n Actual: ', display_gt)
                     print(f'\n Total val loss: {val_loss_total}')
 
-
-
-
-
 if __name__ == '__main__':
     main()

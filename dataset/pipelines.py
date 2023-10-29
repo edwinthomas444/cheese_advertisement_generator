@@ -65,9 +65,13 @@ class GPTPipeline:
         text = self.tokenizer.tokenize(text)[:self.max_len_text-1]
 
         # [self.tokenizer.sep_token]
-        combined_tokens = [self.tokenizer.bos_token] + context + text + [self.tokenizer.eos_token]
+        combined_tokens = [self.tokenizer.bos_token] + context + [self.tokenizer.sep_token] + text + [self.tokenizer.eos_token]
         
-        test_tokens = [self.tokenizer.bos_token] + context
+        test_tokens = [self.tokenizer.bos_token] + context + [self.tokenizer.sep_token]
+        
+        # combined_tokens = [self.tokenizer.bos_token] + context + text + [self.tokenizer.eos_token]
+        
+        # test_tokens = [self.tokenizer.bos_token] + context
         
         # truncate and pad tokens
         combined_tokens = combined_tokens[:self.max_len_model]

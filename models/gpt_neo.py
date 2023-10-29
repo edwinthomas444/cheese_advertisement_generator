@@ -570,7 +570,7 @@ class GPTNeoForCausalLM(GPTNeoPreTrainedModel):
 
         # Initialize weights and apply final processing
         self.post_init()
-
+    
     def get_output_embeddings(self):
         return self.lm_head
 

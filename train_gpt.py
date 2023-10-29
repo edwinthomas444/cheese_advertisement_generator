@@ -35,27 +35,22 @@ def save_checkpoint(
     config_save.to_json_file(output_config_file)
 
 def main():
-    print("Current device?", torch.cuda.current_device())
+    print("Current device: ", torch.cuda.current_device())
 
     # innitialize tokenizer
     gpt_model_name = 'EleutherAI/gpt-neo-1.3B'
-    # tokenizer = GPT2Tokenizer.from_pretrained(gpt_model_name,
-    #                                           bos_token='<|startoftext|>',
-    #                                           eos_token='<|endoftext|>',
-    #                                           pad_token='<|pad|>',
-    #                                           sep_token='<|sep|>')
     tokenizer = GPT2Tokenizer.from_pretrained(gpt_model_name,
                                               bos_token='<|endoftext|>',
                                               eos_token='<|endoftext|>',
                                               pad_token='<|endoftext|>',
-                                              sep_token='<|endoftext|>',
+                                              sep_token='mask',
                                               padding_side = 'left')
 
     # innitialize dataset
     pipeline = GPTPipeline(tokenizer=tokenizer,
-                           max_len_model=650,
-                           max_len_context=200,
-                           max_len_text=400)
+                           max_len_model=800,
+                           max_len_context=450,
+                           max_len_text=350)
 
     annot_file_train = 'Data/slots_data/rhet_data_slots_cleaned_train.json'
     annot_file_valid = 'Data/slots_data/rhet_data_slots_cleaned_val.json'
@@ -103,7 +98,7 @@ def main():
     learning_rate = 5e-05
     gradient_accumulation_steps = 1
     warmup_proportion = 0.1
-    epochs = 100
+    epochs = 10
     validate_steps = 50
     device = torch.device("cuda")
 
@@ -210,9 +205,9 @@ def main():
                     for val_step, val_batch in enumerate(valid_bar):
                         # if val_step >30:
                         #     continue
-                        val_batch, meta_batch = val_batch[:-1], val_batch[-1]
+                        # val_batch, meta_batch = val_batch[:-1], val_batch[-1]
                         inp = [tens.to(device) for tens in val_batch]
-                        input_ids, attention_mask, labels = inp
+                        input_ids, attention_mask, labels, test_token_ids = inp
                                     
                         # obtain loss
                         model_out = model(input_ids=input_ids,
@@ -225,23 +220,17 @@ def main():
                             'Iter (loss=%5.3f)' % valid_loss.item()
                         )
                         # only storing the first prediction of the current batch
-                        test_token_ids = meta_batch[0].unsqueeze(0).to(device)
+                        # test_token_ids = meta_batch.to(device)
                         # print('\n\n test tokens len: ', len(test_token_ids))
                         # print('\n Test tokens: ', test_token_ids)
                         
                         preds = tokenizer.batch_decode(
                             model.module.generate(
-                                test_token_ids), skip_special_tokens=False)
+                                test_token_ids, attention_mask=attention_mask), skip_special_tokens=False)
                         
-                        # preds = tokenizer.batch_decode(
-                        #     model.generate(
-                        #         test_token_ids,
-                        #         do_sample=True,
-                        #         temperature=0.9,
-                        #         max_length=300), skip_special_tokens=False)
                         
-                        input = tokenizer.batch_decode([input_ids[0]], skip_special_tokens = True)
-                        dec_input = tokenizer.batch_decode([labels[0]], skip_special_tokens = True)
+                        input = tokenizer.batch_decode(input_ids, skip_special_tokens = True)
+                        dec_input = tokenizer.batch_decode(labels, skip_special_tokens = True)
 
                         pred_list.extend(preds)
                         inp_list.extend(input)
