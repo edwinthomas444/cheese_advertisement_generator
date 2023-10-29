@@ -33,11 +33,13 @@ def main():
     
     test_dataset = CheeseDescriptionsDataset(annotation_file=annot_file_test,
                                               loader_pipeline=pipeline)
+    
+    bs = 16
 
     # innitalize loaders
     train_loader = DataLoader(
         dataset=train_dataset,
-        batch_size=16,
+        batch_size=bs,
         sampler=None,
         shuffle=True,  # enable shuffle of data
         collate_fn=bert_base_collator,
@@ -46,7 +48,7 @@ def main():
 
     valid_loader = DataLoader(
         dataset=valid_dataset,
-        batch_size=16,
+        batch_size=bs,
         sampler=None,
         shuffle=False,
         collate_fn=bert_base_collator,
@@ -55,7 +57,7 @@ def main():
 
     test_loader = DataLoader(
         dataset=test_dataset,
-        batch_size=16,
+        batch_size=bs,
         sampler=None,
         shuffle=False,
         collate_fn=bert_base_collator,
@@ -63,10 +65,10 @@ def main():
     )
 
     # params
-    learning_rate = 1e-05
+    learning_rate = 5e-05
     gradient_accumulation_steps = 1
     warmup_proportion = 0.1
-    epochs = 100
+    epochs = 10
     validate_steps = 10
     device = torch.device("cuda", 0)
 
@@ -142,7 +144,6 @@ def main():
                               decoder_attention_mask=decoder_attention_mask,
                               labels=labels)
 
-            # ignore mlm and phloss
             loss = model_out.loss
 
             # update bar
@@ -191,7 +192,8 @@ def main():
                         )
                         # get the generated text in list of size valid batch size
                         preds = tokenizer.batch_decode(model.generate(
-                            input_ids), skip_special_tokens=True)
+                            input_ids,
+                            attention_mask = attention_mask), skip_special_tokens=True)
                         input = tokenizer.batch_decode(input_ids, skip_special_tokens = True)
                         dec_input = tokenizer.batch_decode(decoder_input_ids, skip_special_tokens = True)
 

@@ -18,8 +18,8 @@ class BertPipeline:
                                     padding = 'max_length',
                                     truncation = True)
         encoder_input_ids = enc_tokens['input_ids']
-        encoder_attention_mask = [1 if x!=0 else 0 for x in encoder_input_ids]
-        encoder_cross_attention_mask = [1 if x!=0 else 0 for x in encoder_attention_mask]
+        encoder_attention_mask = [1 if x!=self.tokenizer.pad_token_id else 0 for x in encoder_input_ids]
+        encoder_cross_attention_mask = [1 if x!=self.tokenizer.pad_token_id else 0 for x in encoder_attention_mask]
 
         # prepare decoder inputs
         dec_tokens = self.tokenizer(decoder_text,
@@ -27,8 +27,10 @@ class BertPipeline:
                                     padding = 'max_length',
                                     truncation = True)
         
+        # automatically adds [CLS] at beginning and ends by [PAD] token
         decoder_input_ids = dec_tokens['input_ids']
-        decoder_attention_mask = [1 if x!=0 else 0 for x in decoder_input_ids]
+        # print('\n decoder input ids: ', decoder_input_ids)
+        decoder_attention_mask = [1 if x!=self.tokenizer.pad_token_id else 0 for x in decoder_input_ids]
 
         # prepare the labels and target ids are shifted inside the decoder model forward pass
         decoder_target_ids = [x for x in decoder_input_ids]
@@ -43,8 +45,6 @@ class BertPipeline:
         }
 
         return ds
-
-
 
 class GPTPipeline:
     def __init__(self,
