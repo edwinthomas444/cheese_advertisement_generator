@@ -1,18 +1,17 @@
-from transformers import GPT2Tokenizer
-# from transformers import EncoderDecoderModel
-from dataset.pipelines import GPTPipeline
+
 from dataset.dataset import CheeseDescriptionsDataset
 from torch.utils.data import DataLoader
-from collators.collators import gpt_collator
 from transformers import AdamW, get_linear_schedule_with_warmup, get_constant_schedule
-from models.gpt_neo import GPTNeoForCausalLM
 from tqdm import trange, tqdm
 import torch
 import random
+import json
+import argparse
+from models.model_configs import *
 import os
-# os.environ["CUDA_VISIBLE_DEVICES"] = "0, 1"
-
 # saving checkpoints
+
+
 def save_checkpoint(
         save_dir,
         model,
@@ -23,7 +22,7 @@ def save_checkpoint(
 
     output_model_file = os.path.join(save_dir, f"model.bin")
     # saving epoch meta data with config file name
-    output_config_file = os.path.join(save_dir, f"config_{epoch}.json")
+    output_config_file = os.path.join(save_dir, f"config.json")
 
     model.eval()
     model_save = model.module if hasattr(model, 'module') else model
@@ -34,45 +33,46 @@ def save_checkpoint(
     # save config
     config_save.to_json_file(output_config_file)
 
-def main():
-    print("Current device: ", torch.cuda.current_device())
+
+def driver(args, config):
 
     # innitialize tokenizer
-    gpt_model_name = 'EleutherAI/gpt-neo-1.3B'
-    tokenizer = GPT2Tokenizer.from_pretrained(gpt_model_name,
-                                              bos_token='<|endoftext|>',
-                                              eos_token='<|endoftext|>',
-                                              pad_token='<|endoftext|>',
-                                              sep_token='mask',
-                                              padding_side = 'left')
+    model_type = config['type']
+    config_obj = eval(model_type)
+
+    tokenizer = config_obj['tokenizer'].from_pretrained(
+        config['model'][model_type]['name'],
+        **config['model'][model_type]['tokenizer']
+    )
 
     # innitialize dataset
-    pipeline = GPTPipeline(tokenizer=tokenizer,
-                           max_len_model=800,
-                           max_len_context=450,
-                           max_len_text=350)
+    pipeline = config_obj['data_pipeline'](tokenizer=tokenizer,
+                                           len_output=config['model'][model_type
+                                                                      ]['max_len_output'],
+                                           len_context=config['model'][model_type]['max_len_context'])
 
-    annot_file_train = 'Data/slots_data/rhet_data_slots_cleaned_train.json'
-    annot_file_valid = 'Data/slots_data/rhet_data_slots_cleaned_val.json'
-    annot_file_test = 'Data/slots_data/rhet_data_slots_cleaned_test.json'
+    annot_file_train = config['data']['train']
+    annot_file_valid = config['data']['valid']
+    annot_file_test = config['data']['test']
 
     train_dataset = CheeseDescriptionsDataset(annotation_file=annot_file_train,
                                               loader_pipeline=pipeline)
 
     valid_dataset = CheeseDescriptionsDataset(annotation_file=annot_file_valid,
                                               loader_pipeline=pipeline)
-    
+
     test_dataset = CheeseDescriptionsDataset(annotation_file=annot_file_test,
-                                              loader_pipeline=pipeline)
+                                             loader_pipeline=pipeline)
+
+    bs = config['train']['batch_size']
 
     # innitalize loaders
-    bs = 4
     train_loader = DataLoader(
         dataset=train_dataset,
         batch_size=bs,
         sampler=None,
         shuffle=True,  # enable shuffle of data
-        collate_fn=gpt_collator,
+        collate_fn=config_obj['collator'],
         pin_memory=True
     )
 
@@ -81,7 +81,7 @@ def main():
         batch_size=bs,
         sampler=None,
         shuffle=False,
-        collate_fn=gpt_collator,
+        collate_fn=config_obj['collator'],
         pin_memory=True
     )
 
@@ -90,30 +90,18 @@ def main():
         batch_size=bs,
         sampler=None,
         shuffle=False,
-        collate_fn=gpt_collator,
+        collate_fn=config_obj['collator'],
         pin_memory=True
     )
 
-    # params
-    learning_rate = 5e-05
-    gradient_accumulation_steps = 1
-    warmup_proportion = 0.1
-    epochs = 10
-    validate_steps = 50
-    device = torch.device("cuda")
-
-    # innitialize model from pretrained checkpoint
-    model = GPTNeoForCausalLM.from_pretrained(gpt_model_name)
-    # model.resize_token_embeddings(len(tokenizer))
-    # decoder configs (greedy search innitialization)
-    model.config.min_length = 1
-    model.config.max_length = 350
-    model.config.eos_token_id = tokenizer.eos_token_id
-    model.config.bos_token_id = tokenizer.bos_token_id
-    model.config.pad_token_id = tokenizer.pad_token_id
-    model.config.num_beams = 1
-    model.config.num_return_sequences = 1
-    model.config.vocab_size = tokenizer.vocab_size
+    # load model
+    device = torch.device("cuda", 0)
+    model = config_obj['model_loader'](
+        config=config,
+        model_type=model_type,
+        tokenizer=tokenizer,
+        train=True
+    )
     model = torch.nn.DataParallel(model)
     model.to(device)
 
@@ -134,27 +122,27 @@ def main():
 
     optimizer = AdamW(
         optimizer_grouped_parameters,
-        lr=learning_rate,
+        lr=config['train']['learning_rate'],
         correct_bias=False
     )
 
     # linnitialize learning rate scheduler
-    total_steps = int(len(train_loader)*epochs/gradient_accumulation_steps)
-    num_warmup_steps = int(total_steps*warmup_proportion)
+    epochs = config['train']['epochs']
+    total_steps = int(len(train_loader)*epochs /
+                      config['train']['gradient_accumulation_steps'])
+    num_warmup_steps = int(total_steps*config['train']['warmup'])
     print(
         f'\nTotal Steps: {total_steps} | Total Warmup Steps: {num_warmup_steps}')
-    
 
     scheduler = get_linear_schedule_with_warmup(
         optimizer, num_warmup_steps=num_warmup_steps, num_training_steps=total_steps)
 
-    val_loss_min = 100000
     # start training cycle
     for ep in trange(0,
                      epochs,
                      desc="Epoch",
                      disable=False):
-        
+
         print('\n Epoch: ', ep)
         #### TRAIN #####
         train_bar = tqdm(
@@ -162,19 +150,16 @@ def main():
             desc='Iter (loss=X.XXX)',
             disable=False
         )
+
+        model_forward_fnc = config_obj['model_forward']
         model.train()
         for train_step, batch in enumerate(train_bar):
-            batch, meta_batch = batch[:-1], batch[-1]
             inp = [tens.to(device) for tens in batch]
-            input_ids, attention_mask, labels = inp
 
-            # obtain loss
-            model_out = model(input_ids=input_ids,
-                              attention_mask=attention_mask,
-                              labels=labels)
+            model_forward = model_forward_fnc(model=model,
+                                              inp=inp)
 
-            # ignore mlm and phloss
-            loss = model_out.loss.mean()
+            loss = model_forward.loss.mean()
 
             # update bar
             train_bar.set_description(
@@ -188,9 +173,8 @@ def main():
             optimizer.zero_grad()
             scheduler.step()
 
-
             # validation
-            if (train_step+1)%validate_steps == 0:
+            if (train_step+1) % config['valid']['validate_steps'] == 0:
                 #### VALID #####
                 valid_bar = tqdm(
                     valid_loader,
@@ -198,49 +182,57 @@ def main():
                     disable=False
                 )
                 model.eval()
-                
+                val_loss_min = 1e08
                 with torch.no_grad():
                     val_loss_list = []
                     pred_list, inp_list, dec_list = [], [], []
                     for val_step, val_batch in enumerate(valid_bar):
-                        # if val_step >30:
-                        #     continue
-                        # val_batch, meta_batch = val_batch[:-1], val_batch[-1]
                         inp = [tens.to(device) for tens in val_batch]
-                        input_ids, attention_mask, labels, test_token_ids = inp
-                                    
-                        # obtain loss
-                        model_out = model(input_ids=input_ids,
-                                          attention_mask=attention_mask,
-                                          labels=labels)
+                        model_forward = model_forward_fnc(model=model,
+                                                          inp=inp)
 
-                        valid_loss = model_out.loss.mean()
+                        valid_loss = model_forward.loss.mean()
+
                         val_loss_list.append(valid_loss)
                         valid_bar.set_description(
                             'Iter (loss=%5.3f)' % valid_loss.item()
                         )
-                        # only storing the first prediction of the current batch
-                        # test_token_ids = meta_batch.to(device)
-                        # print('\n\n test tokens len: ', len(test_token_ids))
-                        # print('\n Test tokens: ', test_token_ids)
-                        
+
+                        # prepare inputids and attention mask differently for "encoder-decoder" and "decoder-only" models
+                        if model.module.config.is_encoder_decoder:
+                            # Encoder Decoder model
+                            generate_input_ids = model_forward.input_ids
+                            attention_mask = model_forward.attention_mask
+                        else:
+                            # Decoder Only models
+                            generate_input_ids = model_forward.test_token_ids
+                            attention_mask = generate_input_ids.new_ones(
+                                generate_input_ids.shape)
+                            attention_mask[generate_input_ids ==
+                                           tokenizer.pad_token_id] = 0
+
+                        # generate with generation params passed through the config
                         preds = tokenizer.batch_decode(
                             model.module.generate(
-                                test_token_ids, attention_mask=attention_mask), skip_special_tokens=False)
-                        
-                        
-                        input = tokenizer.batch_decode(input_ids, skip_special_tokens = True)
-                        dec_input = tokenizer.batch_decode(labels, skip_special_tokens = True)
+                                generate_input_ids,
+                                attention_mask=attention_mask,
+                                **config['generation_configs'][args.generation]), skip_special_tokens=False)
+
+                        input = tokenizer.batch_decode(
+                            model_forward.input_ids, skip_special_tokens=True)
+                        dec_input = tokenizer.batch_decode(
+                            model_forward.labels, skip_special_tokens=True)
 
                         pred_list.extend(preds)
                         inp_list.extend(input)
                         dec_list.extend(dec_input)
-                        
+
                     # random display
                     disp_ind = random.randint(0, len(inp_list)-1)
-                    print('\n display ind: ', disp_ind)
+                    print('\n Display ind: ', disp_ind)
                     # disp_ind = 0
-                    display_inp, display_pred, display_gt = inp_list[disp_ind], pred_list[disp_ind], dec_list[disp_ind]
+                    display_inp, display_pred, display_gt = inp_list[
+                        disp_ind], pred_list[disp_ind], dec_list[disp_ind]
                     val_loss_total = sum(val_loss_list)/len(val_loss_list)
 
                     print('\n\n Input Text: ', display_inp)
@@ -252,13 +244,33 @@ def main():
                     if val_loss_total <= val_loss_min:
                         val_loss_min = val_loss_total
                         # save the checkpoint
-                        print(f'\n Saving Checkpoint for val loss: {val_loss_min}')
-                        save_checkpoint(save_dir = './checkpoints',
-                                        model = model,
-                                        epoch = ep)
+                        print(
+                            f'\n Saving Checkpoint for val loss: {val_loss_min}')
+                        save_checkpoint(save_dir=config['train']['save_dir'],
+                                        model=model,
+                                        epoch=ep)
 
 
-                    
+def config_parser(config_path):
+    with open(config_path, 'r') as f:
+        config = json.load(f)
+    return config
+
+
+def main():
+    # argument parser stuff
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--config', type=str, required=True)
+    parser.add_argument('--generation', type=str,
+                        required=True,
+                        help='Generate type (matched with config generate options eg: greedy)')
+
+    args = parser.parse_args()
+    config = config_parser(args.config)
+
+    # invoke the generic training driver
+    driver(args, config)
+
 
 if __name__ == '__main__':
     main()

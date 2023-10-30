@@ -1,12 +1,12 @@
 class BertPipeline:
     def __init__(self,
                  tokenizer,
-                 max_len_encoder,
-                 max_len_decoder,
+                 len_context,
+                 len_output,
                  **kwargs):
         self.tokenizer = tokenizer
-        self.max_len_encoder = max_len_encoder
-        self.max_len_decoder = max_len_decoder
+        self.max_len_encoder = len_context
+        self.max_len_decoder = len_output
 
     def __call__(self, row):
         decoder_text = row['output']
@@ -49,14 +49,13 @@ class BertPipeline:
 class GPTPipeline:
     def __init__(self,
                  tokenizer,
-                 max_len_context,
-                 max_len_text,
-                 max_len_model,
+                 len_context,
+                 len_output,
                  **kwargs):
         self.tokenizer = tokenizer
-        self.max_len_context = max_len_context
-        self.max_len_text = max_len_text
-        self.max_len_model = max_len_model
+        self.max_len_context = len_context
+        self.max_len_text = len_output
+        self.max_len_model = self.max_len_context + self.max_len_text
 
     def __call__(self, row):
         context, text = row['input'], row['output']

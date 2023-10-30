@@ -1,0 +1,70 @@
+{
+    "type": "gpt_neo",
+    "data": {
+        "train": "Data/slots_data/rhet_data_slots_cleaned_train.json",
+        "valid": "Data/slots_data/rhet_data_slots_cleaned_val.json",
+        "test": "Data/slots_data/rhet_data_slots_cleaned_test.json"
+    },
+    "checkpoint": {
+        "config_path": "checkpoints/test_run1/config.json",
+        "bin_path": "checkpoints/test_run1/model.bin"
+    },
+    "model":{
+        "bert_base_transformer":{
+            "name": "bert-base-uncased",
+            "max_len_context":512,
+            "max_len_output":512,
+            "tokenizer":{
+                "bos_token": "[CLS]",
+                "eos_token": "[PAD]",
+                "pad_token": "[PAD]",
+                "sep_token": "[SEP]",
+                "padding_side": "right",
+                "lowercase": true
+            }
+        },
+        "gpt_neo":{
+            "name": "EleutherAI/gpt-neo-1.3B",
+            "max_len_context": 450,
+            "max_len_output": 350,
+            "tokenizer":{
+                "name": "EleutherAI/gpt-neo-1.3B",
+                "bos_token": "<|endoftext|>",
+                "eos_token": "<|endoftext|>",
+                "pad_token": "<|endoftext|>",
+                "sep_token": "mask",
+                "padding_side": "left"
+            }
+        }
+    },
+    "train": {
+        "learning_rate": 5e-05,
+        "warmup": 0.1,
+        "gradient_accumulation_steps": 1,
+        "epochs": 5,
+        "batch_size": 4,
+        "save_dir": "checkpoints/test_run1" 
+    },
+    "valid":{
+        "validate_steps": 50
+    },
+    "generation_configs":{
+        "greedy":{
+            "min_length": 1,
+            "max_length": 800
+        },
+        "sampling":{
+            "temperature": 0.5,
+            "max_new_tokens": 250,
+            "no_repeat_ngram_size": 3,
+            "do_sample": true
+        },
+        "beam":{
+            "min_length": 1,
+            "max_length": 250,
+            "num_beams": 4,
+            "num_return_sequences": 1
+        }
+        
+    }
+}
