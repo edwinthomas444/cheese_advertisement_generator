@@ -52,3 +52,23 @@ def gpt_neo_dec_forward_pass(model, inp):
         labels = labels
     )
     return output
+
+
+# Bert model
+def T5_forward_pass(model, inp):
+    input_ids, attention_mask, decoder_input_ids, decoder_attention_mask, labels = inp
+    # obtain loss
+    model_out = model(input_ids=input_ids,
+                      attention_mask=attention_mask,
+                      decoder_input_ids=decoder_input_ids,
+                      decoder_attention_mask=decoder_attention_mask,
+                      labels=labels)
+    loss = model_out.loss
+
+    output = ForwardPassOutput(
+        loss = loss,
+        input_ids = input_ids,
+        attention_mask = attention_mask,
+        labels = decoder_input_ids # as labels has -100 for <pad>, .generate() cant decode it, so we pass decoder_input_ids
+    )
+    return output

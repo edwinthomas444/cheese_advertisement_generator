@@ -220,6 +220,7 @@ def driver(args, config):
 
                         input = tokenizer.batch_decode(
                             model_forward.input_ids, skip_special_tokens=True)
+                        
                         dec_input = tokenizer.batch_decode(
                             model_forward.labels, skip_special_tokens=True)
 

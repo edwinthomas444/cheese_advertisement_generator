@@ -96,10 +96,53 @@ class GPTPipeline:
         return ds
 
 
-        
-    
+# T5 pipeline
+class T5Pipeline:
+    def __init__(self,
+                 tokenizer,
+                 len_context,
+                 len_output,
+                 **kwargs):
+        self.tokenizer = tokenizer
+        self.max_len_encoder = len_context
+        self.max_len_decoder = len_output
 
+    def __call__(self, row):
+        decoder_text = row['output']
+        encoder_text = row['input']
 
+        # prepare encoder inputs
+        # no sos token and ends with eos token ('</s>')
+        enc_tokens = self.tokenizer(encoder_text,
+                                    max_length = self.max_len_encoder,
+                                    padding = 'max_length',
+                                    truncation = True)
+        encoder_input_ids = enc_tokens['input_ids']
+        encoder_attention_mask = [1 if x!=self.tokenizer.pad_token_id else 0 for x in encoder_input_ids]
+
+        # prepare decoder inputs
+        # add pad token in front as .generate() uses it in the beginning of the text _prepare_decoder_input_ids_for_generation()
+        # from the model.config.decoder_start_token_id which is same as pad or 0 for this model
+        dec_tokens = self.tokenizer(decoder_text,
+                                    max_length = self.max_len_decoder-1,
+                                    padding = 'max_length',
+                                    truncation = True)
         
+        decoder_input_ids = [self.tokenizer.pad_token_id] + dec_tokens['input_ids']
+
+        # replace pad tokens by -100 and add sos token as Pad or 0
+        decoder_target_ids = [-100 if (x==0 and i!=0) else x for i, x in enumerate(decoder_input_ids)]
+        # print('decoder intput ids: ', decoder_input_ids)
+        decoder_attention_mask = [1 if x!=-100 else 0 for x in decoder_target_ids]
+        
+        ds = {
+            'input_ids': encoder_input_ids,
+            'attention_mask': encoder_attention_mask,
+            'decoder_input_ids': decoder_input_ids,
+            'decoder_attention_mask': decoder_attention_mask,
+            'labels': decoder_target_ids
+        }
+
+        return ds
     
 

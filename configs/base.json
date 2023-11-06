@@ -1,13 +1,13 @@
 {
-    "type": "gpt_neo",
+    "type": "t5_base",
     "data": {
         "train": "Data/slots_data/rhet_data_slots_cleaned_train.json",
         "valid": "Data/slots_data/rhet_data_slots_cleaned_val.json",
         "test": "Data/slots_data/rhet_data_slots_cleaned_test.json"
     },
     "checkpoint": {
-        "config_path": "checkpoints/test_run1/config.json",
-        "bin_path": "checkpoints/test_run1/model.bin"
+        "config_path": "checkpoints/t5_base/config.json",
+        "bin_path": "checkpoints/t5_base/model.bin"
     },
     "model":{
         "bert_base_transformer":{
@@ -28,22 +28,31 @@
             "max_len_context": 450,
             "max_len_output": 350,
             "tokenizer":{
-                "name": "EleutherAI/gpt-neo-1.3B",
                 "bos_token": "<|endoftext|>",
                 "eos_token": "<|endoftext|>",
                 "pad_token": "<|endoftext|>",
                 "sep_token": "mask",
                 "padding_side": "left"
             }
+        },
+        "t5_base":{
+            "name": "t5-base",
+            "max_len_context": 512,
+            "max_len_output": 350,
+            "tokenizer":{
+                "eos_token": "</s>",
+                "pad_token": "<pad>",
+                "padding_side": "right"
+            }
         }
     },
     "train": {
-        "learning_rate": 5e-05,
+        "learning_rate": 3e-04,
         "warmup": 0.1,
         "gradient_accumulation_steps": 1,
         "epochs": 5,
         "batch_size": 4,
-        "save_dir": "checkpoints/test_run1" 
+        "save_dir": "checkpoints/flan_t5_base"
     },
     "valid":{
         "validate_steps": 50
@@ -65,6 +74,5 @@
             "num_beams": 4,
             "num_return_sequences": 1
         }
-        
     }
 }
