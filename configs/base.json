@@ -1,18 +1,18 @@
 {
-    "type": "t5_base",
+    "type": "gpt_neo",
     "data": {
         "train": "Data/slots_data/rhet_data_slots_cleaned_train.json",
         "valid": "Data/slots_data/rhet_data_slots_cleaned_val.json",
         "test": "Data/slots_data/rhet_data_slots_cleaned_test.json"
     },
     "checkpoint": {
-        "config_path": "checkpoints/t5_base/config.json",
-        "bin_path": "checkpoints/t5_base/model.bin"
+        "config_path": "checkpoints/gpt_neo/config.json",
+        "bin_path": "checkpoints/gpt_neo/model.bin"
     },
     "model":{
         "bert_base_transformer":{
             "name": "bert-base-uncased",
-            "max_len_context":512,
+            "max_len_context":512, 
             "max_len_output":512,
             "tokenizer":{
                 "bos_token": "[CLS]",
@@ -36,7 +36,7 @@
             }
         },
         "t5_base":{
-            "name": "t5-base",
+            "name": "google/flan-t5-base",
             "max_len_context": 512,
             "max_len_output": 350,
             "tokenizer":{
@@ -59,19 +59,39 @@
     },
     "generation_configs":{
         "greedy":{
-            "min_length": 1,
-            "max_length": 800
+            "min_new_tokens": 1,
+            "max_new_tokens": 350
         },
-        "sampling":{
-            "temperature": 0.5,
-            "max_new_tokens": 250,
+        "sampling_topk":{
+            "temperature": 1.0,
+            "min_new_tokens": 1,
+            "max_new_tokens": 350,
             "no_repeat_ngram_size": 3,
-            "do_sample": true
+            "do_sample": true,
+            "top_k":50
+        },
+        "sampling_topp":{
+            "temperature": 1.0,
+            "min_new_tokens": 1,
+            "max_new_tokens": 350,
+            "no_repeat_ngram_size": 3,
+            "do_sample": true,
+            "top_k":0,
+            "top_p":0.95
+        },
+        "sampling_topk_topp":{
+            "temperature": 1.0,
+            "min_new_tokens": 1,
+            "max_new_tokens": 350,
+            "no_repeat_ngram_size": 3,
+            "do_sample": true,
+            "top_k":50,
+            "top_p":0.95
         },
         "beam":{
-            "min_length": 1,
-            "max_length": 250,
-            "num_beams": 4,
+            "min_new_tokens": 1,
+            "max_new_tokens": 350,
+            "num_beams": 5,
             "num_return_sequences": 1
         }
     }

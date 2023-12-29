@@ -12,7 +12,7 @@ import json
 import os
 
 
-def driver(args, config):
+def driver(args, config, mode):
 
     print("Current device: ", torch.cuda.current_device())
     # innitialize tokenizer
@@ -138,12 +138,17 @@ def driver(args, config):
             inp_list.extend(input)
             dec_list.extend(dec_input)
 
+    # mode = "beam"
+    # mode = "sampling_topk"
     # save the predictions in the directory where the checkpoint is saved
-    pred_save_dir = os.path.join(os.path.dirname(config['checkpoint']['config_path']),"test_pred.txt")
-    gt_save_dir = os.path.join(os.path.dirname(config['checkpoint']['config_path']),"test_gt.txt")
-    input_save_dir = os.path.join(os.path.dirname(config['checkpoint']['config_path']),"input_gt.txt")
+    pred_save_dir = os.path.join(os.path.dirname(
+        config['checkpoint']['config_path']), f"test_pred_{mode}.txt")
+    gt_save_dir = os.path.join(os.path.dirname(
+        config['checkpoint']['config_path']), f"test_gt_{mode}.txt")
+    input_save_dir = os.path.join(os.path.dirname(
+        config['checkpoint']['config_path']), f"input_gt_{mode}.txt")
 
-    with open(pred_save_dir, 'w') as f, open(gt_save_dir, 'w') as f1, open(input_save_dir, 'w') as f2:
+    with open(pred_save_dir, 'w', encoding='utf-8') as f, open(gt_save_dir, 'w', encoding='utf-8') as f1, open(input_save_dir, 'w', encoding='utf-8') as f2:
         for inp, pred, gt in zip(inp_list, pred_list, dec_list):
             pred = pred.removeprefix(inp.strip())
             gt = gt.removeprefix(inp.strip())
@@ -155,11 +160,18 @@ def driver(args, config):
 
     # pipeline for evaluating
     results = run_evaluate(gt_file=gt_save_dir, pred_file=pred_save_dir)
-    # save results
-    result_save_file = os.path.join(os.path.dirname(config['checkpoint']['config_path']),"results.json")
-    with open(result_save_file, 'w') as f:
-        json.dump(results, f)
 
+    # results is array of [overall_json, rhet1_json, ..., rhetn_json]
+    # save results
+    for i, result_json in enumerate(results): 
+        if i==0:
+            result_save_file = os.path.join(os.path.dirname(
+                config['checkpoint']['config_path']), f"results_{mode}.json")
+        else:
+            result_save_file = os.path.join(os.path.dirname(
+                config['checkpoint']['config_path']), f"results_{mode}_{i}.json")
+        with open(result_save_file, 'w') as f:
+            json.dump(result_json, f)
 
 
 def config_parser(config_path):
@@ -180,7 +192,7 @@ def main():
     config = config_parser(args.config)
 
     # invoke the generic training driver
-    driver(args, config)
+    driver(args, config, mode=args.generation)
 
 
 if __name__ == '__main__':

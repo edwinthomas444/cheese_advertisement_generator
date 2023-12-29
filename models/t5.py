@@ -1343,6 +1343,7 @@ class T5ForConditionalGeneration(T5PreTrainedModel):
         self.decoder = T5Stack(decoder_config, self.shared)
 
         self.lm_head = nn.Linear(config.d_model, config.vocab_size, bias=False)
+        # to add one more head here for bullet point generation
 
         # Initialize weights and apply final processing
         self.post_init()
@@ -1542,6 +1543,7 @@ class T5ForConditionalGeneration(T5PreTrainedModel):
             sequence_output = sequence_output * (self.model_dim**-0.5)
 
         lm_logits = self.lm_head(sequence_output)
+        # there will be one more the bullet points
         # print('\n lm logits: ', lm_logits)
 
         loss = None

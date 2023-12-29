@@ -21,7 +21,8 @@ $text''')
 # Step1: prompt for generating values for given slots
 # Step2: prompt for generating a text using all the given slots
 prompt_slot_to_desc = [
-    Template("Return a JSON by filling the below slots with values: '$slot_descriptions_string'"),
+    Template(
+        "Return a JSON by filling the below slots with values: '$slot_descriptions_string'"),
     Template('''Without excluding any of the below slots generate a persuasive, professional and concise single paragraph text describing the process of cheese making: 
     '$slot_value_json'
     ''')
