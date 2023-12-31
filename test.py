@@ -1,4 +1,4 @@
-from dataset.dataset import CheeseDescriptionsDataset
+from dataset.dataset import CheeseDescriptionsDataset, CheeseDescriptionsTemplateDataset
 from torch.utils.data import DataLoader
 from transformers import AdamW, get_linear_schedule_with_warmup, get_constant_schedule
 from tqdm import trange, tqdm
@@ -12,7 +12,7 @@ import json
 import os
 
 
-def driver(args, config, mode):
+def driver(args, config, mode, from_template):
 
     print("Current device: ", torch.cuda.current_device())
     # innitialize tokenizer
@@ -30,39 +30,17 @@ def driver(args, config, mode):
                                                                       ]['max_len_output'],
                                            len_context=config['model'][model_type]['max_len_context'])
 
-    annot_file_train = config['data']['train']
-    annot_file_valid = config['data']['valid']
     annot_file_test = config['data']['test']
 
-    train_dataset = CheeseDescriptionsDataset(annotation_file=annot_file_train,
-                                              loader_pipeline=pipeline)
-
-    valid_dataset = CheeseDescriptionsDataset(annotation_file=annot_file_valid,
-                                              loader_pipeline=pipeline)
-
-    test_dataset = CheeseDescriptionsDataset(annotation_file=annot_file_test,
-                                             loader_pipeline=pipeline)
+    if not from_template:
+        test_dataset = CheeseDescriptionsDataset(annotation_file=annot_file_test,
+                                                loader_pipeline=pipeline)
+    else:
+        test_dataset = CheeseDescriptionsTemplateDataset(template_file=annot_file_test,
+                                                         loader_pipeline=pipeline)
 
     bs = config['train']['batch_size']
 
-    # innitalize loaders
-    train_loader = DataLoader(
-        dataset=train_dataset,
-        batch_size=bs,
-        sampler=None,
-        shuffle=True,  # enable shuffle of data
-        collate_fn=config_obj['collator'],
-        pin_memory=True
-    )
-
-    valid_loader = DataLoader(
-        dataset=valid_dataset,
-        batch_size=bs,
-        sampler=None,
-        shuffle=False,
-        collate_fn=config_obj['collator'],
-        pin_memory=True
-    )
 
     test_loader = DataLoader(
         dataset=test_dataset,
@@ -127,6 +105,7 @@ def driver(args, config, mode):
                     generate_input_ids,
                     attention_mask=attention_mask,
                     **config['generation_configs'][args.generation]), skip_special_tokens=True)
+            # print('\n preds: ', preds)
 
             input = tokenizer.batch_decode(
                 generate_input_ids, skip_special_tokens=True)
@@ -141,6 +120,10 @@ def driver(args, config, mode):
     # mode = "beam"
     # mode = "sampling_topk"
     # save the predictions in the directory where the checkpoint is saved
+            
+    if from_template:
+        mode = mode+'_template'
+
     pred_save_dir = os.path.join(os.path.dirname(
         config['checkpoint']['config_path']), f"test_pred_{mode}.txt")
     gt_save_dir = os.path.join(os.path.dirname(
@@ -148,30 +131,38 @@ def driver(args, config, mode):
     input_save_dir = os.path.join(os.path.dirname(
         config['checkpoint']['config_path']), f"input_gt_{mode}.txt")
 
-    with open(pred_save_dir, 'w', encoding='utf-8') as f, open(gt_save_dir, 'w', encoding='utf-8') as f1, open(input_save_dir, 'w', encoding='utf-8') as f2:
-        for inp, pred, gt in zip(inp_list, pred_list, dec_list):
-            pred = pred.removeprefix(inp.strip())
-            gt = gt.removeprefix(inp.strip())
-            if not gt.strip():
-                continue
-            f.write(pred+"\n###\n")
-            f1.write(gt+"\n###\n")
-            f2.write(inp+"\n###\n")
+    if from_template:
+        # only save the pred file , no gt
+        with open(input_save_dir, 'w', encoding='utf-8') as f2, open(pred_save_dir, 'w', encoding='utf-8') as f:
+            for inp, pred in zip(inp_list, pred_list):
+                f.write(pred+"\n###\n")
+                f2.write(inp+"\n###\n")
+    else:
+        with open(pred_save_dir, 'w', encoding='utf-8') as f, open(gt_save_dir, 'w', encoding='utf-8') as f1, open(input_save_dir, 'w', encoding='utf-8') as f2:
+            for inp, pred, gt in zip(inp_list, pred_list, dec_list):
+                pred = pred.removeprefix(inp.strip())
+                gt = gt.removeprefix(inp.strip())
+                if not gt.strip():
+                    continue
+                f.write(pred+"\n###\n")
+                f1.write(gt+"\n###\n")
+                f2.write(inp+"\n###\n")
 
-    # pipeline for evaluating
-    results = run_evaluate(gt_file=gt_save_dir, pred_file=pred_save_dir)
+        # pipeline for evaluating
 
-    # results is array of [overall_json, rhet1_json, ..., rhetn_json]
-    # save results
-    for i, result_json in enumerate(results): 
-        if i==0:
-            result_save_file = os.path.join(os.path.dirname(
-                config['checkpoint']['config_path']), f"results_{mode}.json")
-        else:
-            result_save_file = os.path.join(os.path.dirname(
-                config['checkpoint']['config_path']), f"results_{mode}_{i}.json")
-        with open(result_save_file, 'w') as f:
-            json.dump(result_json, f)
+        results = run_evaluate(gt_file=gt_save_dir, pred_file=pred_save_dir)
+
+        # results is array of [overall_json, rhet1_json, ..., rhetn_json]
+        # save results
+        for i, result_json in enumerate(results): 
+            if i==0:
+                result_save_file = os.path.join(os.path.dirname(
+                    config['checkpoint']['config_path']), f"results_{mode}.json")
+            else:
+                result_save_file = os.path.join(os.path.dirname(
+                    config['checkpoint']['config_path']), f"results_{mode}_{i}.json")
+            with open(result_save_file, 'w') as f:
+                json.dump(result_json, f)
 
 
 def config_parser(config_path):
@@ -184,6 +175,7 @@ def main():
     # argument parser stuff
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', type=str, required=True)
+    parser.add_argument('--from_template', action='store_true', help='To key values from template')
     parser.add_argument('--generation', type=str,
                         required=True,
                         help='Generate type (matched with config generate options eg: greedy)')
@@ -192,7 +184,7 @@ def main():
     config = config_parser(args.config)
 
     # invoke the generic training driver
-    driver(args, config, mode=args.generation)
+    driver(args, config, mode=args.generation, from_template=args.from_template)
 
 
 if __name__ == '__main__':

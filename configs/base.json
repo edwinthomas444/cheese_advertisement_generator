@@ -1,13 +1,13 @@
 {
-    "type": "gpt_neo",
+    "type": "t5_base",
     "data": {
         "train": "Data/slots_data/rhet_data_slots_cleaned_train.json",
         "valid": "Data/slots_data/rhet_data_slots_cleaned_val.json",
-        "test": "Data/slots_data/rhet_data_slots_cleaned_test.json"
+        "test": "configs/cheese_template.json"
     },
     "checkpoint": {
-        "config_path": "checkpoints/gpt_neo/config.json",
-        "bin_path": "checkpoints/gpt_neo/model.bin"
+        "config_path": "checkpoints/flan_t5_base/config.json",
+        "bin_path": "checkpoints/flan_t5_base/model.bin"
     },
     "model":{
         "bert_base_transformer":{

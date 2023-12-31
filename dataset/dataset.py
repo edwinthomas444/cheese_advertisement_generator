@@ -30,7 +30,7 @@ class CheeseDescriptionsDataset(Dataset):
         
         data = {'input':task_input, 'output':task_output}
         df = pd.DataFrame(data=data, columns=['input','output'])
-        df.to_csv('results/gt.csv')
+        # df.to_csv('results/gt.csv')
         return df
 
     def __len__(self):
