@@ -1,18 +1,18 @@
 {
     "identification": {
-        "NameOfCheese": "Cheddar",
+        "NameOfCheese": "Craft Delights",
         "QualityOfRind": "Aged",
         "AnimalSource": "Cow",
         "MainIngredient": "Milk",
         "MainIngredientWeight": "1000 grams",
         "NameOfCheesery": "The Dairy Farm",
-        "NamesOfFacilities": "[Facility A, Facility B]",
+        "NamesOfFacilities": "[Dairy Haven Creameries, CheeseCraft Processing Center]",
         "ManufacturePlace": "Wisconsin",
         "ManufacturedSinceDate": "January 1, 2000",
         "CheeseOriginatedDate": "December 15, 1995",
         "CheeseCreatorMovedFromPlace": "France",
         "CheeseCreatorMovedToPlace": "USA",
-        "CheeseNameFromObject": "Cheddar Cheese"
+        "CheeseNameFromObject": "None"
     },
     "description": {
         "CheeseProductFatContent": "35%",
@@ -33,7 +33,7 @@
         "CheeseProductSlices": "No",
         "CheeseProductCheeseType": "Hard",
         "CheeseProductMilkQuality": "Grade A",
-        "CheeseProductMilkQualityList": "Grade A, Grade B",
+        "CheeseProductMilkQualityList": "[GradeA]",
         "CheeseProductMilkAnimalSource": "Cow",
         "CheeseProductRennetOrigin": "Microbial",
         "CheeseProductIngredientToMilk": "Cultures",
@@ -48,14 +48,14 @@
         "MinutesHeatedCurd": "45 minutes",
         "DaysMouldPressing": "2 days",
         "WeeksMouldResting": "4 weeks",
-        "SkeweringAfterWeeks": "6 weeks",
+        "SkeweringAfterWeeks": "None",
         "ConsumptionAfterMonths": "3 months",
         "RindQuality": "Crusty",
-        "MouldColor": "Green",
+        "MouldColor": "None",
         "TypeWood": "Oak",
-        "ProcessTimeInHours": "72 hours",
+        "ProcessTimeInHours": "None",
         "ProcessingTypeOfMilkUsed": "Cow's milk",
-        "ProcessingTypeOfMilkNotUsed": "Goat's milk",
+        "ProcessingTypeOfMilkNotUsed": "None",
         "AnimalMilk": "Cow",
         "CurdCutShape": "Squares",
         "CurdTurnIntervalMinutes": "15 minutes",
@@ -64,19 +64,19 @@
         "CheeseAgingWeeks": "12 weeks",
         "PlantLeafWrap": "None",
         "NameOfCheesery": "The Dairy Farm",
-        "CheeseAgingDays": "84 days",
+        "CheeseAgingDays": "None",
         "CheeseAgingMonths": "3 months",
         "CheeseAgingYears": "5 years",
-        "CheeseMildAgingMonths": "6 months",
-        "CheeseMatureAgingMonths": "1 year",
-        "CheeseExtraMatureAgingMonths": "3 years",
-        "CheeseVintageAgingMonths": "5 years"
+        "CheeseMildAgingMonths": "None",
+        "CheeseMatureAgingMonths": "None",
+        "CheeseExtraMatureAgingMonths": "None",
+        "CheeseVintageAgingMonths": "None"
     },
     "smell_taste": {
         "CheeseName": "Cheddar",
         "TasteQuality": "Rich and Nutty",
         "TasteQualityList": "Savory, Tangy",
-        "IngredientsList": "Milk, Cultures, Salt",
+        "IngredientsList": "None",
         "AfterTaste": "Mild and Lingering",
         "FoodComparison": "Pairs well with apples and crackers",
         "AromaQuality": "Earthy and Aromatic"
@@ -99,7 +99,7 @@
         "Position": "1st",
         "AnimalMilk": "Cow",
         "NameOfCheesery": "The Dairy Farm",
-        "RegisteredAnimal": "Holstein Cow",
+        "RegisteredAnimal": "None",
         "ManufacturePlace": "Wisconsin"
     }
 }
