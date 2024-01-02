@@ -1,9 +1,9 @@
 {
-    "type": "gpt_neo",
+    "type": "t5_base",
     "data": {
         "train": "Data/slots_data/rhet_data_slots_cleaned_train.json",
         "valid": "Data/slots_data/rhet_data_slots_cleaned_val.json",
-        "test": "configs/cheese_template.json"
+        "test": "Data/slots_data/rhet_data_slots_cleaned_test.json"
     },
     "checkpoint": {
         "config_path": "checkpoints/gpt_neo/config.json",
