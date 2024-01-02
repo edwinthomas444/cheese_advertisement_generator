@@ -70,7 +70,7 @@ Note: Other notebooks in the `./Notebooks/` folder are experimental and can be i
 `python test.py --config configs/base.json --generation "sampling_topk_topp"`
 
 
-### Inference (Single Input Template)
+## Inference (Single Input Template)
 
 Input template based inferencing can be done by specifying the template file path under "data->test" within the configs. A sample template is already provided under `configs/cheese_template.json`. While running test specify the flag `--from_template` as shown below: 
 
@@ -102,6 +102,8 @@ Input template based inferencing can be done by specifying the template file pat
  - `train.py & test.py` contains training and testing code (innitialization of dataset, optimizers, models, training/inference pipelines, saving checkpoints, evaluation etc.)
 
  - `evaluation` contains quantitative metric definitions for evaluating model performance such as Rouge-1,2,L, Meteor, Bleu-4, BertScore etc. 
+
+ - Use `Script` folder to store automation shell script files for consecutive training or inference jobs. 
 
 
 
