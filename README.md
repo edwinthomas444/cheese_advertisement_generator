@@ -40,7 +40,12 @@ Use `./Notebooks/data_analysis.ipynb` to analyze the prepared data and generate 
 2. val_data: `./Data/slots_data/rhet_data_slots_cleaned_val.json`
 3. test_data: `./Data/slots_data/rhet_data_slots_cleaned_test.json`
 
-Note: Other notebooks in the `./Notebooks/` folder are experimental and can be ignored.
+Note: 
+- Invoking OpenAI service requires creating an account on the platform and adding credits in USD. Please refer to [OpenAI Documentation](https://openai.com/blog/openai-api) for details. Once created, an API key is obtained which should be updated within the appropriate notebook cell. 
+
+- Additional notebooks in the `./Notebooks/` folder are experimental and can be ignored. 
+
+
 
 ## Train model
 
